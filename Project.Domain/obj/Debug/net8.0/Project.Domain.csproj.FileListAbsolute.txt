@@ -12,3 +12,4 @@ C:\Users\hussi\source\repos\Project.Api\Project.Domain\obj\Debug\net8.0\refint\P
 C:\Users\hussi\source\repos\Project.Api\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
 C:\Users\hussi\source\repos\Project.Api\Project.Domain\obj\Debug\net8.0\Project.Domain.genruntimeconfig.cache
 C:\Users\hussi\source\repos\Project.Api\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll
+C:\Users\hussi\source\repos\Project.Api\Project.Domain\obj\Debug\net8.0\Project.Domain.sourcelink.json

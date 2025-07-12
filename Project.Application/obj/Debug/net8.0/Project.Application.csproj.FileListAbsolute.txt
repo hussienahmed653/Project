@@ -15,3 +15,4 @@ C:\Users\hussi\source\repos\Project.Api\Project.Application\obj\Debug\net8.0\ref
 C:\Users\hussi\source\repos\Project.Api\Project.Application\obj\Debug\net8.0\Project.Application.pdb
 C:\Users\hussi\source\repos\Project.Api\Project.Application\obj\Debug\net8.0\Project.Application.genruntimeconfig.cache
 C:\Users\hussi\source\repos\Project.Api\Project.Application\obj\Debug\net8.0\ref\Project.Application.dll
+C:\Users\hussi\source\repos\Project.Api\Project.Application\obj\Debug\net8.0\Project.Application.sourcelink.json

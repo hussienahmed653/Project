@@ -17,5 +17,8 @@ namespace Project.Infrastructure.DBContext
         }
         public DbSet<Domain.Employee> Employees { get; set; }
         public DbSet<Domain.Region> Regions { get; set; }
+        public DbSet<Domain.Categories> Categories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Domain.CustomerDemographics> CustomerDemographics { get; set; }
     }
 }

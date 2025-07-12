@@ -9,5 +9,6 @@ namespace Project.Domain
         public string TerritoryDescription { get; set; }
         public int RegionID { get; set; }
         public Region Region { get; set; }
+        public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
     }
 }

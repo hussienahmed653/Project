@@ -17,3 +17,4 @@ C:\Users\hussi\source\repos\Project.Api\Project.Infrastructure\obj\Debug\net8.0\
 C:\Users\hussi\source\repos\Project.Api\Project.Infrastructure\obj\Debug\net8.0\Project.Infrastructure.pdb
 C:\Users\hussi\source\repos\Project.Api\Project.Infrastructure\obj\Debug\net8.0\Project.Infrastructure.genruntimeconfig.cache
 C:\Users\hussi\source\repos\Project.Api\Project.Infrastructure\obj\Debug\net8.0\ref\Project.Infrastructure.dll
+C:\Users\hussi\source\repos\Project.Api\Project.Infrastructure\obj\Debug\net8.0\Project.Infrastructure.sourcelink.json

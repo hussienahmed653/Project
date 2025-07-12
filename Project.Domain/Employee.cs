@@ -36,5 +36,6 @@ namespace Project.Domain
         [MaxLength(255)]
         public string? PhotoPath { get; set; }
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
+        public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
     }
 }
