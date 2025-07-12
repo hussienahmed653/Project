@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.Infrastructure.DBContext;
 
@@ -11,9 +12,11 @@ using Project.Infrastructure.DBContext;
 namespace Project.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250712180824_AddOrdersTable")]
+    partial class AddOrdersTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,8 +274,6 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("EmployeeID");
 
-                    b.HasIndex("ShipVia");
-
                     b.ToTable("Orders", (string)null);
                 });
 
@@ -496,15 +497,9 @@ namespace Project.Infrastructure.Migrations
                         .WithMany("Orders")
                         .HasForeignKey("EmployeeID");
 
-                    b.HasOne("Project.Domain.Shipper", "Shipper")
-                        .WithMany("Orders")
-                        .HasForeignKey("ShipVia");
-
                     b.Navigation("Customer");
 
                     b.Navigation("Employee");
-
-                    b.Navigation("Shipper");
                 });
 
             modelBuilder.Entity("Project.Domain.Product", b =>
@@ -562,11 +557,6 @@ namespace Project.Infrastructure.Migrations
             modelBuilder.Entity("Project.Domain.Region", b =>
                 {
                     b.Navigation("Territories");
-                });
-
-            modelBuilder.Entity("Project.Domain.Shipper", b =>
-                {
-                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Project.Domain.Supplier", b =>

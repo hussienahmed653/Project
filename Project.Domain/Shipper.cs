@@ -14,5 +14,6 @@ namespace Project.Domain
         public string CompanyName { get; set; }
         [MaxLength(24)]
         public string? Phone { get; set; }
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

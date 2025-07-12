@@ -37,5 +37,6 @@ namespace Project.Domain
         public string? PhotoPath { get; set; }
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

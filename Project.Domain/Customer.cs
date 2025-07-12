@@ -26,5 +26,6 @@ namespace Project.Domain
         [MaxLength(24)]
         public string? Fax { get; set; }
         public ICollection<CustomerCustomerDemo> customerCustomerDemos { get; set; } = new List<CustomerCustomerDemo>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
