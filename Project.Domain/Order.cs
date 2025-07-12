@@ -32,5 +32,6 @@ namespace Project.Domain
         public string? ShipPostalCode { get; set; }
         [MaxLength(15)]
         public string? ShipCountry { get; set; }
+        public ICollection<OrderDetails> OrderDetails { get; set; } = new List<OrderDetails>();
     }
 }

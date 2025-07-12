@@ -18,5 +18,6 @@ namespace Project.Domain
         public byte? UnitsOnOrder { get; set; } // has default value of 0
         public byte? ReorderLevel { get; set; } // has default value of 0
         public bool Discontinued { get; set; } // has default value of 0
+        public ICollection<OrderDetails> OrderDetails { get; set; } = new List<OrderDetails>();
     }
 }
