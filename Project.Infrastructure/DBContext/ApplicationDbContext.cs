@@ -20,5 +20,6 @@ namespace Project.Infrastructure.DBContext
         public DbSet<Domain.Categories> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Domain.CustomerDemographics> CustomerDemographics { get; set; }
+        public DbSet<Shipper> Shippers { get; set; }
     }
 }
