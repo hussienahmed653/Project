@@ -38,5 +38,6 @@ namespace Project.Domain
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<EmployeeFile> EmployeeFiles { get; set; } = new List<EmployeeFile>();
     }
 }
