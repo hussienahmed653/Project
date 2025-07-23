@@ -5,7 +5,7 @@ namespace Project.Application.Common.Interfaces
 {
     public interface IEmployeeRepository
     {
-        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid guid);
+        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid);
         public int GetMaxId();
         public Task<bool> ExistAsync(int id);
         public Task<List<Domain.Employee>> GetAllEmployeesAsync();

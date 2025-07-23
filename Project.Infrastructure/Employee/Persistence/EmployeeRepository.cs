@@ -42,7 +42,7 @@ namespace Project.Infrastructure.Employee.Persistence
                 .ToListAsync();
         }
 
-        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid guid)
+        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid)
         {
             return _context.Employees
                 .SingleOrDefaultAsync(e => e.EmployeeGuid ==guid);

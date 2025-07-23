@@ -105,5 +105,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.EmployeesController",
+    "Method": "GetAllEmployees",
+    "RelativePath": "api/Employees/GetAllEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.EmployeesController",
+    "Method": "GetEmployeeByGuid",
+    "RelativePath": "api/Employees/GetEmployeeByGuid/{guid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

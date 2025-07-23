@@ -4,6 +4,7 @@ using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
 using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Application.Employee.Commands.DeleteEmployee;
+using Project.Application.Employee.Queries.GetEmployee;
 
 namespace Project.Api.Controller
 {
@@ -11,12 +12,10 @@ namespace Project.Api.Controller
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        IEmployeeRepository _employeeRepository;
         IMediator _mediator;
 
-        public EmployeesController(IEmployeeRepository employeeRepository, IMediator mediator)
+        public EmployeesController(IMediator mediator)
         {
-            _employeeRepository = employeeRepository;
             _mediator = mediator;
         }
         [HttpPost("AddEmployee")]
@@ -49,7 +48,33 @@ namespace Project.Api.Controller
                     return BadRequest();
                 return Ok(new { Message = "Employee deleted successfully", result = result.Value });
             }
-            catch (Exception ex) 
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("GetAllEmployees")]
+        public async Task<IActionResult> GetAllEmployees()
+        {
+            try
+            {
+                var result = _mediator.Send(new GetEmployeeQueries(null));
+                return Ok(await result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("GetEmployeeByGuid/{guid}")]
+        public async Task<IActionResult> GetEmployeeByGuid(Guid guid)
+        {
+            try
+            {
+                var result = _mediator.Send(new GetEmployeeQueries(guid));
+                return Ok(await result);
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
