@@ -27,6 +27,9 @@ namespace Project.Infrastructure.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("CategoryGuid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasMaxLength(15)
@@ -41,19 +44,6 @@ namespace Project.Infrastructure.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("Project.Domain.CategoryFile", b =>
-                {
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Path")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("CategoryID", "Path");
-
-                    b.ToTable("CategoryFile");
                 });
 
             modelBuilder.Entity("Project.Domain.Customer", b =>
@@ -156,6 +146,9 @@ namespace Project.Infrastructure.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<Guid>("EmployeeGuid")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Extension")
                         .HasMaxLength(4)
                         .HasColumnType("nvarchar(4)");
@@ -213,19 +206,6 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("Project.Domain.EmployeeFile", b =>
-                {
-                    b.Property<int>("EmployeeID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Path")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("EmployeeID", "Path");
-
-                    b.ToTable("EmployeeFile");
-                });
-
             modelBuilder.Entity("Project.Domain.EmployeeTerritorie", b =>
                 {
                     b.Property<int>("EmployeeID")
@@ -239,6 +219,19 @@ namespace Project.Infrastructure.Migrations
                     b.HasIndex("TerritoryID");
 
                     b.ToTable("EmployeeTerritories", (string)null);
+                });
+
+            modelBuilder.Entity("Project.Domain.FilePath", b =>
+                {
+                    b.Property<Guid>("EntityGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("EntityGuid", "Path");
+
+                    b.ToTable("FilePaths");
                 });
 
             modelBuilder.Entity("Project.Domain.Order", b =>
@@ -489,17 +482,6 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("Territorie");
                 });
 
-            modelBuilder.Entity("Project.Domain.CategoryFile", b =>
-                {
-                    b.HasOne("Project.Domain.Categories", "categories")
-                        .WithMany("CategoryFiles")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("categories");
-                });
-
             modelBuilder.Entity("Project.Domain.CustomerCustomerDemo", b =>
                 {
                     b.HasOne("Project.Domain.Customer", "Customer")
@@ -526,17 +508,6 @@ namespace Project.Infrastructure.Migrations
                         .HasForeignKey("ReportsTo");
 
                     b.Navigation("Manager");
-                });
-
-            modelBuilder.Entity("Project.Domain.EmployeeFile", b =>
-                {
-                    b.HasOne("Project.Domain.Employee", "employee")
-                        .WithMany("EmployeeFiles")
-                        .HasForeignKey("EmployeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("employee");
                 });
 
             modelBuilder.Entity("Project.Domain.EmployeeTerritorie", b =>
@@ -626,8 +597,6 @@ namespace Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Project.Domain.Categories", b =>
                 {
-                    b.Navigation("CategoryFiles");
-
                     b.Navigation("Products");
                 });
 
@@ -645,8 +614,6 @@ namespace Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Project.Domain.Employee", b =>
                 {
-                    b.Navigation("EmployeeFiles");
-
                     b.Navigation("EmployeeTerritories");
 
                     b.Navigation("Orders");

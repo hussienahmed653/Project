@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "xCrnx6xH8ZxjGPU81RwPfQgNPzvPezTBer77jNl8Tgc=",
+  "Hash": "o6ug+IP9bEJtweXV29FYKdExl8nYchnUc+XjYssqX6w=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Project.Api\\wwwroot",
+      "Source": "Project.Api",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

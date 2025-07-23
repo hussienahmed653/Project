@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\ahmed\\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs",
+      "PackagePath": "staticwebassets\\Uplodes\\ahmed\\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs"
+    },
+    {
+      "Id": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\ahmed\\1eca8380-954e-4781-bbf9-bfad1506586a.cs",
+      "PackagePath": "staticwebassets\\Uplodes\\ahmed\\1eca8380-954e-4781-bbf9-bfad1506586a.cs"
+    },
+    {
+      "Id": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\ahmed\\3210f632-7e44-40c5-8533-2282714a4242.cs",
+      "PackagePath": "staticwebassets\\Uplodes\\ahmed\\3210f632-7e44-40c5-8533-2282714a4242.cs"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Project.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Project.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Project.Api.props",
+      "PackagePath": "build\\Project.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Project.Api.props",
+      "PackagePath": "buildMultiTargeting\\Project.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Project.Api.props",
+      "PackagePath": "buildTransitive\\Project.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

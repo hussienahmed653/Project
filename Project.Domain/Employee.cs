@@ -5,6 +5,7 @@ namespace Project.Domain
     public class Employee
     {
         public int EmployeeID { get; set; }
+        public Guid EmployeeGuid { get; set; } = Guid.NewGuid();
         [MaxLength(20)]
         public string LastName { get; set; }
         [MaxLength(10)]
@@ -38,6 +39,5 @@ namespace Project.Domain
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
-        public ICollection<EmployeeFile> EmployeeFiles { get; set; } = new List<EmployeeFile>();
     }
 }

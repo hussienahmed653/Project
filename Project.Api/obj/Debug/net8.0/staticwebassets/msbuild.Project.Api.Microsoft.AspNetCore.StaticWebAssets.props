@@ -1,0 +1,58 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/ahmed/0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>8k5dpspvvb</Fingerprint>
+      <Integrity>aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\1eca8380-954e-4781-bbf9-bfad1506586a.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/ahmed/1eca8380-954e-4781-bbf9-bfad1506586a.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jrb8142c8m</Fingerprint>
+      <Integrity>ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\1eca8380-954e-4781-bbf9-bfad1506586a.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\3210f632-7e44-40c5-8533-2282714a4242.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/ahmed/3210f632-7e44-40c5-8533-2282714a4242.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>l7girca31o</Fingerprint>
+      <Integrity>kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\3210f632-7e44-40c5-8533-2282714a4242.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

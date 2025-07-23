@@ -4,6 +4,165 @@
     "title": "Project.Api",
     "version": "1.0"
   },
-  "paths": { },
+  "paths": {
+    "/api/Employees/AddEmployee": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "FirstName": {
+                    "maxLength": 10,
+                    "type": "string"
+                  },
+                  "Title": {
+                    "maxLength": 30,
+                    "type": "string"
+                  },
+                  "TitleOfCourtesy": {
+                    "maxLength": 25,
+                    "type": "string"
+                  },
+                  "BirthDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "HireDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Address": {
+                    "maxLength": 60,
+                    "type": "string"
+                  },
+                  "City": {
+                    "maxLength": 15,
+                    "type": "string"
+                  },
+                  "Region": {
+                    "maxLength": 15,
+                    "type": "string"
+                  },
+                  "PostalCode": {
+                    "maxLength": 10,
+                    "type": "string"
+                  },
+                  "Country": {
+                    "maxLength": 15,
+                    "type": "string"
+                  },
+                  "HomePhone": {
+                    "maxLength": 24,
+                    "type": "string"
+                  },
+                  "Extension": {
+                    "maxLength": 4,
+                    "type": "string"
+                  },
+                  "Notes": {
+                    "type": "string"
+                  },
+                  "ReportsTo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "LastName": {
+                  "style": "form"
+                },
+                "FirstName": {
+                  "style": "form"
+                },
+                "Title": {
+                  "style": "form"
+                },
+                "TitleOfCourtesy": {
+                  "style": "form"
+                },
+                "BirthDate": {
+                  "style": "form"
+                },
+                "HireDate": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Region": {
+                  "style": "form"
+                },
+                "PostalCode": {
+                  "style": "form"
+                },
+                "Country": {
+                  "style": "form"
+                },
+                "HomePhone": {
+                  "style": "form"
+                },
+                "Extension": {
+                  "style": "form"
+                },
+                "Notes": {
+                  "style": "form"
+                },
+                "ReportsTo": {
+                  "style": "form"
+                },
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employees/DeleteEmployee/{guid}": {
+      "delete": {
+        "tags": [
+          "Employees"
+        ],
+        "parameters": [
+          {
+            "name": "guid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
   "components": { }
 }
