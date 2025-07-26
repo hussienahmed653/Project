@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
 using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Application.Employee.Commands.DeleteEmployee;
+using Project.Application.Employee.Commands.UpdateEmployee;
 using Project.Application.Employee.Queries.GetEmployee;
 
 namespace Project.Api.Controller
@@ -19,18 +19,13 @@ namespace Project.Api.Controller
             _mediator = mediator;
         }
         [HttpPost("AddEmployee")]
-        public async Task<IActionResult> AddEmployee([FromForm] AddEmployeeDTO addEmployeeDTO)
+        public async Task<IActionResult> AddEmployee([FromForm] AddEmployeeDto addEmployeeDTO)
         {
             try
             {
                 var command = new CreateEmployeeCommand(addEmployeeDTO);
                 var result = await _mediator.Send(command);
-                return Ok(
-                    new
-                    {
-                        Message = "Employee added successfully",
-                        result = result
-                    });
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -44,11 +39,15 @@ namespace Project.Api.Controller
             try
             {
                 var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
-                if (result.IsError)
+                if (!result)
                     return BadRequest();
-                return Ok(new { Message = "Employee deleted successfully", result = result.Value });
+                return Ok(new { Message = "Employee deleted successfully" });
             }
-            catch (Exception ex)
+            catch (FileNotFoundException ex)
+            {
+                return StatusCode(404, ex.Message);
+            }
+            catch(Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -58,8 +57,8 @@ namespace Project.Api.Controller
         {
             try
             {
-                var result = _mediator.Send(new GetEmployeeQueries(null));
-                return Ok(await result);
+                var result = await _mediator.Send(new GetEmployeeQueries(null));
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -71,8 +70,30 @@ namespace Project.Api.Controller
         {
             try
             {
-                var result = _mediator.Send(new GetEmployeeQueries(guid));
-                return Ok(await result);
+                var result = await _mediator.Send(new GetEmployeeQueries(guid));
+                return Ok(result);
+            }
+            catch (FileNotFoundException ex)
+            {
+                return StatusCode(404, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("UpdateEmployee")]
+        public async Task<IActionResult> UpdateEmployee([FromForm] UpdateEmployeeDto updateEmployeeDto)
+        {
+            try
+            {
+                var command = new UpdateEmployeeCommand(updateEmployeeDto);
+                var result = await _mediator.Send(command);
+                return Ok(result);
+            }
+            catch (FileNotFoundException ex)
+            {
+                return StatusCode(404, ex.Message);
             }
             catch (Exception ex)
             {

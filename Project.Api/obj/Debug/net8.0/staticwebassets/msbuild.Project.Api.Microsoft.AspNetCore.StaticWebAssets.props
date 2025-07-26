@@ -1,47 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.Api</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/ahmed/0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8k5dpspvvb</Fingerprint>
-      <Integrity>aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\0627ab7f-7e28-462f-83fd-9f4614c02ff2.cs'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\1eca8380-954e-4781-bbf9-bfad1506586a.cs'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Project.Api</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/ahmed/1eca8380-954e-4781-bbf9-bfad1506586a.cs</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jrb8142c8m</Fingerprint>
-      <Integrity>ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\1eca8380-954e-4781-bbf9-bfad1506586a.cs'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\3210f632-7e44-40c5-8533-2282714a4242.cs'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Project.Api</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/ahmed/3210f632-7e44-40c5-8533-2282714a4242.cs</RelativePath>
+      <RelativePath>Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -52,7 +16,43 @@
       <Integrity>kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\ahmed\3210f632-7e44-40c5-8533-2282714a4242.cs'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\huikllk\5257122a-7378-40e2-adbc-a5f136a0f728.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>8k5dpspvvb</Fingerprint>
+      <Integrity>aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\huikllk\5257122a-7378-40e2-adbc-a5f136a0f728.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Tasneem\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2uv2ylcmci</Fingerprint>
+      <Integrity>Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Tasneem\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

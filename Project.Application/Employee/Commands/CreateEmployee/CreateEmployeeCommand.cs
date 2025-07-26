@@ -1,9 +1,7 @@
-﻿using ErrorOr;
-using MediatR;
-using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Project.Application.DTOs;
 
 namespace Project.Application.Employee.Commands.CreateEmployee
 {
-    public record CreateEmployeeCommand(AddEmployeeDTO EmployeeDTO) : IRequest<ErrorOr<Domain.Employee>>;
+    public record CreateEmployeeCommand(AddEmployeeDto EmployeeDTO) : IRequest<Domain.Employee>;
 }

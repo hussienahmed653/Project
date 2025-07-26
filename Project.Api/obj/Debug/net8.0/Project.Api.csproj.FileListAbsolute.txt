@@ -211,3 +211,5 @@ C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\zh-Hans\Mic
 C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\Project.Api.staticwebassets.runtime.json
+C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\hussi\source\repos\Project.Api\Project.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

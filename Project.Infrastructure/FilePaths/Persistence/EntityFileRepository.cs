@@ -4,7 +4,7 @@ using Project.Application.Common.Interfaces;
 using Project.Domain;
 using Project.Infrastructure.DBContext;
 
-namespace Project.Infrastructure.UplodeFile.Persistence
+namespace Project.Infrastructure.FilePaths.Persistence
 {
     internal class EntityFileRepository : IEntityFileRepository
     {
@@ -29,10 +29,17 @@ namespace Project.Infrastructure.UplodeFile.Persistence
             throw new FileNotFoundException("This path is not Exist");
         }
 
+        public async Task<List<FilePath>> GetAllFilesAsync(List<Guid> guids)
+        {
+            return await _context.FilePaths
+                .Where(f => guids.Contains(f.EntityGuid))
+                .ToListAsync();
+        }
+
         public Task<string> UploadFileAsync(IFormFile file, FilePath entity, string directorypath)
         {
             var path = Path.Combine(wwwroot, directorypath);
-            if(!Directory.Exists(path))
+            if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
             var extension = Path.GetExtension(file.FileName);

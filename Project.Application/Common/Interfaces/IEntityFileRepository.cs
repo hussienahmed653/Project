@@ -7,6 +7,6 @@ namespace Project.Application.Common.Interfaces
     {
         public Task<string> UploadFileAsync(IFormFile file, FilePath entity, string directorypath);
         public Task DeleteFileAsync(Guid guid);
-
+        public Task<List<FilePath>> GetAllFilesAsync(List<Guid> guids);
     }
 }

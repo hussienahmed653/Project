@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Project.Domain
 {
@@ -30,14 +31,13 @@ namespace Project.Domain
         public string? HomePhone { get; set; }
         [MaxLength(4)]
         public string? Extension { get; set; }
-        public byte[]? Photo { get; set; }
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public Employee Manager { get; set; }
-        [MaxLength(255)]
-        public string? PhotoPath { get; set; }
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+        [NotMapped]
+        public ICollection<FilePath> EntityFiles { get; set; } = new List<FilePath>();
     }
 }

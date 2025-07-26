@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o6ug+IP9bEJtweXV29FYKdExl8nYchnUc+XjYssqX6w=",
+  "Hash": "sj0YTw9j0t2YV7fnT0j8CZOJ30gGUuhx3HiKuiI3LlM=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
@@ -15,6 +15,317 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Ahmed\\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l7girca31o",
+      "Integrity": "kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\Ahmed\\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs"
+    },
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\huikllk\\5257122a-7378-40e2-adbc-a5f136a0f728.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8k5dpspvvb",
+      "Integrity": "aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\huikllk\\5257122a-7378-40e2-adbc-a5f136a0f728.cs"
+    },
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Tasneem\\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2uv2ylcmci",
+      "Integrity": "Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\Tasneem\\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Ahmed\\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Jul 2025 12:44:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6.l7girca31o.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Ahmed\\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4068"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Jul 2025 12:44:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l7girca31o"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728.8k5dpspvvb.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\huikllk\\5257122a-7378-40e2-adbc-a5f136a0f728.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3979"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Jul 2025 11:59:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8k5dpspvvb"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\huikllk\\5257122a-7378-40e2-adbc-a5f136a0f728.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3979"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Jul 2025 11:59:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.2uv2ylcmci.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Tasneem\\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 17:46:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2uv2ylcmci"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Tasneem\\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Jul 2025 17:46:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        }
+      ]
+    }
+  ]
 }

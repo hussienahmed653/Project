@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
+using Project.Application.DTOs;
 using Project.Infrastructure.DBContext;
 
 namespace Project.Infrastructure.Employee.Persistence
@@ -36,16 +37,36 @@ namespace Project.Infrastructure.Employee.Persistence
                 .AnyAsync(e => e.EmployeeID == id);
         }
 
-        public Task<List<Domain.Employee>> GetAllEmployeesAsync()
+        public Task<List<EmployeeWithFiles>> GetAllEmployeesAsync()
         {
-            return _context.Employees
-                .ToListAsync();
+            var query = from e in _context.Employees
+                        .Include(e => e.EmployeeTerritories)
+                        .Include(e => e.Orders)
+                        join f in _context.FilePaths
+                        on e.EmployeeGuid equals f.EntityGuid into ef
+                        select new EmployeeWithFiles
+                        {
+                            Employee = e,
+                            EntityFiles = ef.ToList()
+                        };
+            return query.ToListAsync();
         }
 
-        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid)
+        public Task<EmployeeWithFiles> GetEmployeeByGuIdAsync(Guid? guid)
         {
-            return _context.Employees
-                .SingleOrDefaultAsync(e => e.EmployeeGuid ==guid);
+
+            var query = from e in _context.Employees
+                        .Include(e => e.EmployeeTerritories)
+                        .Include(e => e.Orders)
+                        join f in _context.FilePaths
+                        on e.EmployeeGuid equals f.EntityGuid into ef
+                        select new EmployeeWithFiles
+                        {
+                            Employee = e,
+                            EntityFiles = ef.ToList()
+                        };
+            return query.SingleOrDefaultAsync(ef => ef.Employee.EmployeeGuid == guid);
+
         }
 
         public int GetMaxId()
