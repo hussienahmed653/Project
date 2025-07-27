@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Project.Application.DTOs;
-using Project.Domain;
 
 namespace Project.Application.Mapping.Employee
 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sj0YTw9j0t2YV7fnT0j8CZOJ30gGUuhx3HiKuiI3LlM=",
+  "Hash": "SKYmNDigHKng4/lxD3gurzDSpZ9EYkq9RWdvWM7ydeA=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uplodes\\huikllk\\5257122a-7378-40e2-adbc-a5f136a0f728.cs"
+    },
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mohamed\\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/Mohamed/d33b2eb3-3fe9-4c12-ba85-d82c750408a8#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jrb8142c8m",
+      "Integrity": "ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\Mohamed\\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs"
     },
     {
       "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Tasneem\\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs",
@@ -242,6 +263,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Mohamed/d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mohamed\\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Jul 2025 03:39:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Mohamed/d33b2eb3-3fe9-4c12-ba85-d82c750408a8.jrb8142c8m.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mohamed\\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5594"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Jul 2025 03:39:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jrb8142c8m"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/Mohamed/d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A="
         }
       ]
     },

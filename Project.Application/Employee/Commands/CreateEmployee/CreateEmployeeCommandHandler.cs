@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Project.Application.Common.Interfaces;
-using Project.Application.DTOs;
 using Project.Domain;
 
 namespace Project.Application.Employee.Commands.CreateEmployee

@@ -30,8 +30,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
                 if(listofemployees.Count is 0)
                     throw new Exception("There is no Employees found.");
 
-                var listofemployeesmapper = _mapper.Map<List<EmployeeResponseDto>>(listofemployees);
-                return listofemployeesmapper;
+                return _mapper.Map<List<EmployeeResponseDto>>(listofemployees);
             }
             var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
             if (employee is null)
