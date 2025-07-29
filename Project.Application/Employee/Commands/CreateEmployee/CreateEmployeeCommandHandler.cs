@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Domain;
@@ -9,13 +9,11 @@ namespace Project.Application.Employee.Commands.CreateEmployee
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _genericUploadeEntityFile;
-        private readonly IMapper _mapper;
 
-        public CreateEmployeeCommandHandler(IEmployeeRepository employeeRepository, IEntityFileRepository genericUploadeEntityFile, IMapper mapper)
+        public CreateEmployeeCommandHandler(IEmployeeRepository employeeRepository, IEntityFileRepository genericUploadeEntityFile)
         {
             _employeeRepository = employeeRepository;
             _genericUploadeEntityFile = genericUploadeEntityFile;
-            _mapper = mapper;
         }
 
         public async Task<Domain.Employee> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
@@ -23,7 +21,8 @@ namespace Project.Application.Employee.Commands.CreateEmployee
             try
             {
                 var id = _employeeRepository.GetMaxId();
-                var employeemapper = _mapper.Map<Domain.Employee>(request.EmployeeDTO);
+                //var employeemapper = _mapper.Map<Domain.Employee>(request.EmployeeDTO);
+                var employeemapper = request.EmployeeDTO.Adapt<Domain.Employee>();
                 employeemapper.EmployeeID = id + 1;
                 employeemapper.EmployeeGuid = Guid.NewGuid();
                 //var employee = new Domain.Employee

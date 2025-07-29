@@ -1,21 +1,19 @@
-﻿using AutoMapper;
-using Azure.Core;
+﻿using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
-using Project.Domain;
 
 namespace Project.Application.Employee.Commands.UpdateEmployee
 {
     public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand, EmployeeResponseDto>
     {
         private readonly IEmployeeRepository _employeeRepository;
-        private readonly IMapper _mapper;
-
-        public UpdateEmployeeCommandHandler(IEmployeeRepository employeeRepository, IMapper mapper)
+        IEntityFileRepository _genericUploadeEntityFile;
+        public UpdateEmployeeCommandHandler(IEmployeeRepository employeeRepository,
+            IEntityFileRepository genericUploadeEntityFile)
         {
             _employeeRepository = employeeRepository;
-            _mapper = mapper;
+            _genericUploadeEntityFile = genericUploadeEntityFile;
         }
 
         public async Task<EmployeeResponseDto> Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
@@ -23,9 +21,18 @@ namespace Project.Application.Employee.Commands.UpdateEmployee
             var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.UpdateEmployeeDTO.EmployeeGuid);
             if (employee is null)
                 throw new FileNotFoundException("There is no Employee With This Guid");
-            _mapper.Map(request.UpdateEmployeeDTO, employee);
-            await _employeeRepository.UpdateEmployeeAsync(employee.Employee);
-            var employeemapper = _mapper.Map<EmployeeResponseDto>(employee);
+            //_mapper.Map(request.UpdateEmployeeDTO, employee);
+            request.UpdateEmployeeDTO.Adapt(employee);
+            if(request.UpdateEmployeeDTO.FirstName is not null)
+            {
+                var path = employee.EntityFiles.FirstOrDefault()?.Path;
+                var newpath = _genericUploadeEntityFile.UpdateFilePath(path, request.UpdateEmployeeDTO.FirstName);
+                employee.EntityFiles.FirstOrDefault().Path = newpath.Result;
+            }
+
+            await _employeeRepository.UpdateEmployeeAsync(employee);
+            //var employeemapper = _mapper.Map<EmployeeResponseDto>(employee);
+            var employeemapper = employee.Adapt<EmployeeResponseDto>();
             return employeemapper;
         }
 

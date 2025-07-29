@@ -1,8 +1,7 @@
-﻿using AutoMapper;
+﻿using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
-using System.Runtime.CompilerServices;
 
 namespace Project.Application.Employee.Queries.GetEmployee
 {
@@ -10,14 +9,11 @@ namespace Project.Application.Employee.Queries.GetEmployee
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _entityFileRepository;
-        private readonly IMapper _mapper;
 
         public GetEmployeeQueriesHandler(IEmployeeRepository employeeRepository,
-            IMapper mapper,
             IEntityFileRepository entityFileRepository)
         {
             _employeeRepository = employeeRepository;
-            _mapper = mapper;
             _entityFileRepository = entityFileRepository;
         }
 
@@ -29,17 +25,15 @@ namespace Project.Application.Employee.Queries.GetEmployee
 
                 if(listofemployees.Count is 0)
                     throw new Exception("There is no Employees found.");
-
-                return _mapper.Map<List<EmployeeResponseDto>>(listofemployees);
+                return listofemployees.Adapt<List<EmployeeResponseDto>>();
+                //return _mapper.Map<List<EmployeeResponseDto>>(listofemployees);
             }
             var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
             if (employee is null)
                 throw new Exception("There is no Employee With This Guid");
-            var employeemapper = _mapper.Map<EmployeeResponseDto>(employee);
-            return new List<EmployeeResponseDto> 
-            { 
-                employeemapper 
-            };
+            //var employeemapper = _mapper.Map<EmployeeResponseDto>(employee);
+            var employeemapper = employee.Adapt<EmployeeResponseDto>();
+            return new List<EmployeeResponseDto> { employeemapper };
         }
     }
 }

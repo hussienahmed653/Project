@@ -1,3 +1,4 @@
+using Project.Application;
 using Project.Infrastructure;
 using System.Text.Json.Serialization;
 
@@ -9,10 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddInfrastructure(builder.Configuration);
-//builder.Services.AddControllers()
-//    .AddJsonOptions(option =>
-//    option.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+builder.Services
+    .AddApplicationServices()
+    .AddInfrastructure(builder.Configuration);
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;

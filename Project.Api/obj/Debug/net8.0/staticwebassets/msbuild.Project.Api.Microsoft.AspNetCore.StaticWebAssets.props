@@ -1,76 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\0e1edd64-2912-4368-bb4b-52a2c5f36017.cs'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.Api</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/Ahmed/10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs</RelativePath>
+      <RelativePath>Uplodes/Ahmed/0e1edd64-2912-4368-bb4b-52a2c5f36017.cs</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>l7girca31o</Fingerprint>
-      <Integrity>kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=</Integrity>
+      <Fingerprint>h5dhsz65ue</Fingerprint>
+      <Integrity>K/t58dy1EyXUDgCQI+ciAkVSRUiYIjUTqHodkZznx9g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\10bc7bd3-b608-43b8-aabe-96abe10f95a6.cs'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\huikllk\5257122a-7378-40e2-adbc-a5f136a0f728.cs'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Project.Api</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/huikllk/5257122a-7378-40e2-adbc-a5f136a0f728.cs</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8k5dpspvvb</Fingerprint>
-      <Integrity>aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\huikllk\5257122a-7378-40e2-adbc-a5f136a0f728.cs'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Mohamed\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Project.Api</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/Mohamed/d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>jrb8142c8m</Fingerprint>
-      <Integrity>ccE8Ky59yJmlr28vztrAUW+h2kokpI9VlnSf8lO342A=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Mohamed\d33b2eb3-3fe9-4c12-ba85-d82c750408a8.cs'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Tasneem\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs'))">
-      <SourceType>Package</SourceType>
-      <SourceId>Project.Api</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/Tasneem/fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2uv2ylcmci</Fingerprint>
-      <Integrity>Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Tasneem\fc7d7666-0dfe-4fa0-ac7a-2c9470b78086.cs'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\Ahmed\0e1edd64-2912-4368-bb4b-52a2c5f36017.cs'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

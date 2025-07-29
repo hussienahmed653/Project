@@ -36,6 +36,38 @@ namespace Project.Infrastructure.FilePaths.Persistence
                 .ToListAsync();
         }
 
+        public async Task<string> UpdateFilePath(string path, string newfirstname)
+        {
+            var guidfilename = Path.GetFileNameWithoutExtension(path);
+            var extention = Path.GetExtension(path);
+            var newfilename = $"{guidfilename}{extention}";
+
+            var newfolder = Path.Combine(wwwroot, newfirstname);
+            if(!Directory.Exists(newfolder))
+                Directory.CreateDirectory(newfolder);
+
+            var newpath = Path.Combine(newfolder, newfilename);
+
+            if(File.Exists(path))
+                File.Move(path, newpath);
+
+            var filepath = await _context.FilePaths
+                .FirstOrDefaultAsync(f => f.Path == path);
+            _context.FilePaths.Remove(filepath);
+            await _context.SaveChangesAsync();
+
+            var newFilePath = new FilePath
+            {
+                EntityGuid = filepath.EntityGuid,
+                Path = newpath,
+            };
+
+            _context.Add(newFilePath);
+            await _context.SaveChangesAsync();
+
+            return newpath;
+        }
+
         public Task<string> UploadFileAsync(IFormFile file, FilePath entity, string directorypath)
         {
             var path = Path.Combine(wwwroot, directorypath);
