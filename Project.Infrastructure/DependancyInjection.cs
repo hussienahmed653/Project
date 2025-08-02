@@ -6,6 +6,7 @@ using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
 using Project.Infrastructure.FilePaths.Persistence;
+using Project.Infrastructure.Transactions.Persistence;
 
 namespace Project.Infrastructure
 {
@@ -18,6 +19,7 @@ namespace Project.Infrastructure
                                                         option.UseSqlServer(connectionstring));
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEntityFileRepository ,EntityFileRepository>();
+            services.AddScoped<IUnitOfWork, UniteOfWork>();
             
             return services;
         }

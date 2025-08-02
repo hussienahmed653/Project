@@ -146,16 +146,6 @@
         "IsRequired": false
       },
       {
-        "Name": "LastName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "FirstName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Title",
         "Type": "System.String",
         "IsRequired": false

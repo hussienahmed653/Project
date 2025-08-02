@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o6ug+IP9bEJtweXV29FYKdExl8nYchnUc+XjYssqX6w=",
+  "Hash": "b6H6EQgqXgJAjeyAmesn/RWF+I82r8d61UNSlnahZpM=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
@@ -15,6 +15,111 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mena\\18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/Mena/18d1cc5d-7ec0-407e-9e18-1b5239580674#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iv5nq9wbhw",
+      "Integrity": "gqRVAZS7levAIIV90bFZJHjxr3s6WUeZgol/Jvz2s10=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\Mena\\18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Uplodes/Mena/18d1cc5d-7ec0-407e-9e18-1b5239580674.iv5nq9wbhw.jpg",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mena\\18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150945"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gqRVAZS7levAIIV90bFZJHjxr3s6WUeZgol/Jvz2s10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:24:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iv5nq9wbhw"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/Mena/18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gqRVAZS7levAIIV90bFZJHjxr3s6WUeZgol/Jvz2s10="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/Mena/18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\Mena\\18d1cc5d-7ec0-407e-9e18-1b5239580674.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "150945"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gqRVAZS7levAIIV90bFZJHjxr3s6WUeZgol/Jvz2s10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 16:24:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gqRVAZS7levAIIV90bFZJHjxr3s6WUeZgol/Jvz2s10="
+        }
+      ]
+    }
+  ]
 }

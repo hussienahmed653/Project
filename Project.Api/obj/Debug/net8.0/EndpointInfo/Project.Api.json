@@ -213,14 +213,6 @@
                     "type": "string",
                     "format": "uuid"
                   },
-                  "LastName": {
-                    "maxLength": 20,
-                    "type": "string"
-                  },
-                  "FirstName": {
-                    "maxLength": 10,
-                    "type": "string"
-                  },
                   "Title": {
                     "maxLength": 30,
                     "type": "string"
@@ -280,12 +272,6 @@
               },
               "encoding": {
                 "EmployeeGuid": {
-                  "style": "form"
-                },
-                "LastName": {
-                  "style": "form"
-                },
-                "FirstName": {
                   "style": "form"
                 },
                 "Title": {
