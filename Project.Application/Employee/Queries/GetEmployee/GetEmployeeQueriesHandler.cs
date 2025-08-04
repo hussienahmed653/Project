@@ -3,6 +3,7 @@ using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
+using Project.Application.Mapping.Employee;
 
 namespace Project.Application.Employee.Queries.GetEmployee
 {
@@ -33,12 +34,14 @@ namespace Project.Application.Employee.Queries.GetEmployee
                     if (listofemployees.Count is 0)
                         throw new Exception("There is no Employees found.");
                     await _unitOfWork.CommitAsync();
-                    return listofemployees.Adapt<List<EmployeeResponseDto>>();
+                    //return listofemployees.Adapt<List<EmployeeResponseDto>>();
+                    return listofemployees.GetEmployee();
                 }
                 var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
                 if (employee is null)
                     throw new Exception("There is no Employee With This Guid");
-                var employeemapper = employee.Adapt<EmployeeResponseDto>();
+                //var employeemapper = employee.Adapt<EmployeeResponseDto>();
+                var employeemapper = employee.GetEmployee();
                 await _unitOfWork.CommitAsync();
                 return new List<EmployeeResponseDto> { employeemapper };
             }

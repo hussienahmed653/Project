@@ -1,5 +1,88 @@
 {
   "Version": 1,
   "ManifestType": "Build",
-  "Endpoints": []
+  "Endpoints": [
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.2uv2ylcmci.cs",
+      "AssetFile": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 01:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2uv2ylcmci"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs"
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "AssetFile": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 01:21:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        }
+      ]
+    }
+  ]
 }

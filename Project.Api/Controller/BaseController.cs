@@ -9,7 +9,7 @@ namespace Project.Api.Controller
         {
             if(result.IsError)
                 return Problem(result.Errors.ToList());
-            return NoContent();
+            return Ok(result.Value);
         }
 
         private IActionResult Problem(List<Error> errors)
@@ -19,7 +19,6 @@ namespace Project.Api.Controller
                 return base.Problem();
             }
 
-
             if (errors.All(error => error.Type == ErrorType.NotFound))
             {
                 return NotFound(errors);
@@ -28,13 +27,21 @@ namespace Project.Api.Controller
             {
                 return StatusCode(StatusCodes.Status400BadRequest, errors);
             }
-            else if (errors.All(error => error.Type == ErrorType.Unexpected))
+            else if (errors.All(error => error.Type == ErrorType.Unauthorized))
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, errors);
+                return StatusCode(StatusCodes.Status401Unauthorized, errors);
             }
             else if(errors.All(errors => errors.Type == ErrorType.Forbidden))
             {
                 return StatusCode(StatusCodes.Status403Forbidden, errors);
+            }
+            else if (errors.All(errors => errors.Type == ErrorType.Conflict))
+            {
+                return StatusCode(StatusCodes.Status409Conflict, errors);
+            }
+            else if (errors.All(error => error.Type == ErrorType.Unexpected))
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, errors);
             }
 
             return base.Problem();

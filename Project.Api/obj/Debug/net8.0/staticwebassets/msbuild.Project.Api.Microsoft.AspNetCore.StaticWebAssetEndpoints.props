@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/Project.Api/Uplodes/5b18610d-e32c-4bb2-ae2c-5ec3aef27489/731fbf84-4105-41da-a2ca-e28873882171.8k5dpspvvb.cs">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\5b18610d-e32c-4bb2-ae2c-5ec3aef27489\731fbf84-4105-41da-a2ca-e28873882171.cs'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Project.Api/Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.2uv2ylcmci.cs">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8k5dpspvvb"},{"Name":"integrity","Value":"sha256-aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8="},{"Name":"label","Value":"_content/Project.Api/Uplodes/5b18610d-e32c-4bb2-ae2c-5ec3aef27489/731fbf84-4105-41da-a2ca-e28873882171.cs"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3979"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 03 Aug 2025 21:07:32 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2uv2ylcmci"},{"Name":"integrity","Value":"sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="},{"Name":"label","Value":"_content/Project.Api/Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5451"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\u0022"},{"Name":"Last-Modified","Value":"Mon, 04 Aug 2025 01:21:16 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Project.Api/Uplodes/5b18610d-e32c-4bb2-ae2c-5ec3aef27489/731fbf84-4105-41da-a2ca-e28873882171.cs">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\5b18610d-e32c-4bb2-ae2c-5ec3aef27489\731fbf84-4105-41da-a2ca-e28873882171.cs'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Project.Api/Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3979"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022aFYhAw18ii8qwPDo3Ed7T8l6iPiwn/ingTRnNif42p8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 03 Aug 2025 21:07:32 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5451"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\u0022"},{"Name":"Last-Modified","Value":"Mon, 04 Aug 2025 01:21:16 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

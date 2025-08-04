@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o6ug+IP9bEJtweXV29FYKdExl8nYchnUc+XjYssqX6w=",
+  "Hash": "pkmC1GJlefei2QUsUnQFp1ac5vkqEdS7gdbSoNv3A1M=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
@@ -15,6 +15,111 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2uv2ylcmci",
+      "Integrity": "Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.2uv2ylcmci.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 01:21:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2uv2ylcmci"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "AssetFile": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 04 Aug 2025 01:21:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w="
+        }
+      ]
+    }
+  ]
 }

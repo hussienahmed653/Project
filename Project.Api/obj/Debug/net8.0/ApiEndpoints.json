@@ -33,22 +33,6 @@
   },
   {
     "ContainingType": "Project.Api.Controller.EmployeesController",
-    "Method": "DeleteFile",
-    "RelativePath": "api/Employees/DeleteFile/{guid}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "guid",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Project.Api.Controller.EmployeesController",
     "Method": "GetAllEmployees",
     "RelativePath": "api/Employees/GetAllEmployees",
     "HttpMethod": "GET",
@@ -155,9 +139,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Project.Api.Controller.EmployeesController",
+    "ContainingType": "Project.Api.Controller.EntityFilePathsController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/EntityFilePaths/DeleteFile/{guid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.EntityFilePathsController",
     "Method": "UploadFile",
-    "RelativePath": "api/Employees/UploadFile",
+    "RelativePath": "api/EntityFilePaths/UploadFile",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

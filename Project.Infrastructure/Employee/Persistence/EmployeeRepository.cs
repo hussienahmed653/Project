@@ -19,6 +19,7 @@ namespace Project.Infrastructure.Employee.Persistence
         public async Task AddEmployeeAsync(Domain.Employee employee)
         {
             await _context.Employees.AddAsync(employee);
+            await _context.SaveChangesAsync();
         }
 
         public Task DeleteEmployeeAsync(int id)

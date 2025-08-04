@@ -32,7 +32,6 @@ namespace Project.Application.EntityFilePaths.Commands.CreateEntityFile
                     EntityGuid = request.Guid
                 };
                 var filepath = await _entityFileRepository.UploadFileAsync(request.File, entityfilepath);
-                await _unitOfWork.SaveChangesAsync();
                 await _unitOfWork.CommitAsync();
                 return filepath;
             }

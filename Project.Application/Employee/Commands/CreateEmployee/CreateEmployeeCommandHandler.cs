@@ -1,8 +1,7 @@
 ﻿using ErrorOr;
-using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
-using Project.Domain;
+using Project.Application.Mapping.Employee;
 
 namespace Project.Application.Employee.Commands.CreateEmployee
 {
@@ -28,14 +27,12 @@ namespace Project.Application.Employee.Commands.CreateEmployee
                 await _unitOfWork.BeginTransactionAsync();
 
                 var id = _employeeRepository.GetMaxId();
-                var employeemapper = request.EmployeeDTO.Adapt<Domain.Employee>();
+                var employeemapper = request.EmployeeDTO.AddEmployeeMapper();
 
                 employeemapper.EmployeeID = id + 1;
                 employeemapper.EmployeeGuid = Guid.NewGuid();
 
                 await _employeeRepository.AddEmployeeAsync(employeemapper);
-
-                await _unitOfWork.SaveChangesAsync();
                 await _unitOfWork.CommitAsync();
                 return employeemapper;
             }
