@@ -38,6 +38,6 @@ namespace Project.Domain
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
         [NotMapped]
-        public ICollection<FilePath> EntityFiles { get; set; } = new List<FilePath>();
+        public ICollection<FilePath>? EntityFiles { get; set; } = new List<FilePath>();
     }
 }

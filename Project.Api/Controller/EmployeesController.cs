@@ -5,12 +5,14 @@ using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Application.Employee.Commands.DeleteEmployee;
 using Project.Application.Employee.Commands.UpdateEmployee;
 using Project.Application.Employee.Queries.GetEmployee;
+using Project.Application.EntityFilePaths.Commands.CreateEntityFile;
+using Project.Application.EntityFilePaths.Commands.DeleteEntityFile;
 
 namespace Project.Api.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController : ControllerBase
+    public class EmployeesController : BaseController
     {
         IMediator _mediator;
 
@@ -19,13 +21,54 @@ namespace Project.Api.Controller
             _mediator = mediator;
         }
         [HttpPost("AddEmployee")]
-        public async Task<IActionResult> AddEmployee([FromForm] AddEmployeeDto addEmployeeDTO)
+        public async Task<IActionResult> AddEmployee([FromBody] AddEmployeeDto addEmployeeDTO)
+        {
+            //try
+            //{
+            var command = new CreateEmployeeCommand(addEmployeeDTO);
+            var result = await _mediator.Send(command);
+            //return Ok(new
+            //{
+            //    iserror = result.IsError,
+            //    value = result.Value,
+            //    errortype = result.Errors
+            //});
+            return ProblemOr(result);
+            //}
+            //catch (Exception ex)
+            //{
+            //    return Problem(statusCode: 404);
+            //}
+        }
+        [HttpPost("UploadFile")]
+        public async Task<IActionResult> UploadFile(IFormFile file, Guid guid)
         {
             try
             {
-                var command = new CreateEmployeeCommand(addEmployeeDTO);
+                var command = new CreateEntityFilePathCommand(guid, file);
                 var result = await _mediator.Send(command);
-                return Ok(result);
+                return ProblemOr(result);
+            }
+            catch (FileNotFoundException ex)
+            {
+                return StatusCode(404, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return Problem();
+            }
+        }
+        [HttpDelete("DeleteFile/{guid}")]
+        public async Task<IActionResult> DeleteFile(Guid guid)
+        {
+            try
+            {
+                var result = await _mediator.Send(new DeleteEntityFileCommand(guid));
+                return ProblemOr(result);
+            }
+            catch (FileNotFoundException ex)
+            {
+                return StatusCode(404, ex.Message);
             }
             catch (Exception ex)
             {
@@ -33,21 +76,20 @@ namespace Project.Api.Controller
             }
         }
 
+
         [HttpDelete("DeleteEmployee/{guid}")]
         public async Task<IActionResult> DeleteEmployee(Guid guid)
         {
             try
             {
                 var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
-                if (!result)
-                    return BadRequest();
-                return Ok(new { Message = "Employee deleted successfully" });
+                return ProblemOr(result);
             }
             catch (FileNotFoundException ex)
             {
                 return StatusCode(404, ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -58,7 +100,12 @@ namespace Project.Api.Controller
             try
             {
                 var result = await _mediator.Send(new GetEmployeeQueries(null));
-                return Ok(result);
+                return Ok(new
+                {
+                    iserror = result.IsError,
+                    value = result.Value,
+                    errortype = result.Errors
+                });
             }
             catch (Exception ex)
             {

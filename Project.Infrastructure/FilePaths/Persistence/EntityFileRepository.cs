@@ -29,15 +29,22 @@ namespace Project.Infrastructure.FilePaths.Persistence
             throw new FileNotFoundException("This path is not Exist");
         }
 
+        public async Task<bool> FileIsExistAsync(Guid guid)
+        {
+            return await _context.FilePaths
+                .AsNoTracking()
+                .AnyAsync(f => f.EntityGuid == guid);
+        }
+
         public async Task<List<FilePath>> GetAllFilesAsync(List<Guid> guids)
         {
             return await _context.FilePaths
                 .Where(f => guids.Contains(f.EntityGuid))
                 .ToListAsync();
         }
-        public Task<string> UploadFileAsync(IFormFile file, FilePath entity, string directorypath)
+        public Task<string> UploadFileAsync(IFormFile file, FilePath entity)
         {
-            var path = Path.Combine(wwwroot, directorypath);
+            var path = Path.Combine(wwwroot, entity.EntityGuid.ToString());
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 

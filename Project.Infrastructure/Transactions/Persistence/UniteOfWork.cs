@@ -39,5 +39,10 @@ namespace Project.Infrastructure.Transactions.Persistence
                 _transaction = null;
             }
         }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }

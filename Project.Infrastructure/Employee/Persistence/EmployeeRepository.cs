@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ErrorOr;
+using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
 using Project.Infrastructure.DBContext;
+using System.Diagnostics.Tracing;
 
 namespace Project.Infrastructure.Employee.Persistence
 {
@@ -14,11 +16,9 @@ namespace Project.Infrastructure.Employee.Persistence
             _context = context;
         }
 
-        public Task AddEmployeeAsync(Domain.Employee employee)
+        public async Task AddEmployeeAsync(Domain.Employee employee)
         {
-            _context.Employees.AddAsync(employee);
-            _context.SaveChanges();
-            return Task.CompletedTask;
+            await _context.Employees.AddAsync(employee);
         }
 
         public Task DeleteEmployeeAsync(int id)
@@ -30,11 +30,11 @@ namespace Project.Infrastructure.Employee.Persistence
             return Task.CompletedTask;
         }
 
-        public Task<bool> ExistAsync(int id)
+        public Task<bool> ExistAsync(Guid guid)
         {
             return _context.Employees
                 .AsNoTracking()
-                .AnyAsync(e => e.EmployeeID == id);
+                .AnyAsync(e => e.EmployeeGuid == guid);
         }
 
         public async Task<List<Domain.Employee>> GetAllEmployeesAsync()

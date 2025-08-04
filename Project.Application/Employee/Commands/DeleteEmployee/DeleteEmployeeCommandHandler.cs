@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using ErrorOr;
+using MediatR;
 using Project.Application.Common.Interfaces;
 
 namespace Project.Application.Employee.Commands.DeleteEmployee
 {
-    public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, bool>
+    public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, ErrorOr<bool>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _entityFileRepository;
@@ -18,16 +19,16 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<bool>> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
+                if (!await _employeeRepository.ExistAsync(request.Guid))
+                    return Error.NotFound(description: "There is no Employee with this guid");
                 var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
-                if (employee is null)
-                    throw new FileNotFoundException("There is no Employee With This Guid");
+
                 await _employeeRepository.DeleteEmployeeAsync(employee.EmployeeID);
-                await _entityFileRepository.DeleteFileAsync(employee.EmployeeGuid);
                 await _unitOfWork.CommitAsync();
                 return true;
             }

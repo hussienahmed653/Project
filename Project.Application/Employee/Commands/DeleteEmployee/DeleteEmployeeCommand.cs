@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿using ErrorOr;
+using MediatR;
 
 namespace Project.Application.Employee.Commands.DeleteEmployee
 {
-    public record DeleteEmployeeCommand(Guid Guid) : IRequest<bool>;
+    public record DeleteEmployeeCommand(Guid Guid) : IRequest<ErrorOr<bool>>;
 }

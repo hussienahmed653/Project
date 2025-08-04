@@ -27,6 +27,5 @@ namespace Project.Application.DTOs
         public string? Extension { get; set; }
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
-        public IFormFile? file { get; set; }
     }
 }

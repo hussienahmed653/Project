@@ -8,7 +8,8 @@ namespace Project.Application.Mapping.Employee
         public void Register(TypeAdapterConfig config)
         {
             config.NewConfig<Domain.Employee, EmployeeResponseDto>()
-                .Map(dest => dest.Filepath, sour => sour.EntityFiles.FirstOrDefault().Path);
+                .Map(dest => dest.Filepath!, sour => sour.EntityFiles!.FirstOrDefault()!.Path)
+                .IgnoreNullValues(true);
 
             config.NewConfig<UpdateEmployeeDto, Domain.Employee>()
                 .IgnoreNullValues(true);

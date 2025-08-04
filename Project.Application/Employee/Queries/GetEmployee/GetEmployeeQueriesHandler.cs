@@ -1,11 +1,12 @@
-﻿using Mapster;
+﻿using ErrorOr;
+using Mapster;
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
 
 namespace Project.Application.Employee.Queries.GetEmployee
 {
-    public class GetEmployeeQueriesHandler : IRequestHandler<GetEmployeeQueries, List<EmployeeResponseDto>>
+    public class GetEmployeeQueriesHandler : IRequestHandler<GetEmployeeQueries, ErrorOr<List<EmployeeResponseDto>>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _entityFileRepository;
@@ -20,7 +21,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<EmployeeResponseDto>> Handle(GetEmployeeQueries request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<List<EmployeeResponseDto>>> Handle(GetEmployeeQueries request, CancellationToken cancellationToken)
         {
             try
             {
