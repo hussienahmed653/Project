@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "27PBm52iDt8=",
+  "dgSpecHash": "/WM2TL+UKRE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Api\\Project.Api.csproj",
+  "projectFilePath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\Project.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hussi\\.nuget\\packages\\awssdk.core\\4.0.0.16\\awssdk.core.4.0.0.16.nupkg.sha512",
     "C:\\Users\\hussi\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

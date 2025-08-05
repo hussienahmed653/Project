@@ -4561,11 +4561,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Domain\\Project.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Domain\\Project.Domain.csproj",
       "projectName": "Project.Domain",
-      "projectPath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Domain\\Project.Domain.csproj",
+      "projectPath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Domain\\Project.Domain.csproj",
       "packagesPath": "C:\\Users\\hussi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Domain\\obj\\",
+      "outputPath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

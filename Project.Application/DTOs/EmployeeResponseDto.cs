@@ -18,6 +18,6 @@
         public string? Extension { get; set; }
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
-        public string? Filepath { get; set; }
+        public List<string>? Filepath { get; set; } = new List<string>();
     }
 }

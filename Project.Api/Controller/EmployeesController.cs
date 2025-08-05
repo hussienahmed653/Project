@@ -44,72 +44,27 @@ namespace Project.Api.Controller
         [HttpDelete("DeleteEmployee/{guid}")]
         public async Task<IActionResult> DeleteEmployee(Guid guid)
         {
-            try
-            {
                 var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
                 return ProblemOr(result);
-            }
-            catch (FileNotFoundException ex)
-            {
-                return StatusCode(404, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
         }
         [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
-            try
-            {
                 var result = await _mediator.Send(new GetEmployeeQueries(null));
-                return Ok(new
-                {
-                    iserror = result.IsError,
-                    value = result.Value,
-                    errortype = result.Errors
-                });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+                return ProblemOr(result);
         }
         [HttpGet("GetEmployeeByGuid/{guid}")]
         public async Task<IActionResult> GetEmployeeByGuid(Guid guid)
         {
-            try
-            {
                 var result = await _mediator.Send(new GetEmployeeQueries(guid));
-                return Ok(result);
-            }
-            catch (FileNotFoundException ex)
-            {
-                return StatusCode(404, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+                return ProblemOr(result);
         }
         [HttpPut("UpdateEmployee")]
         public async Task<IActionResult> UpdateEmployee([FromForm] UpdateEmployeeDto updateEmployeeDto)
         {
-            try
-            {
-                var command = new UpdateEmployeeCommand(updateEmployeeDto);
-                var result = await _mediator.Send(command);
-                return Ok(result);
-            }
-            catch (FileNotFoundException ex)
-            {
-                return StatusCode(404, ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var command = new UpdateEmployeeCommand(updateEmployeeDto);
+            var result = await _mediator.Send(command);
+            return ProblemOr(result);
         }
 
     }

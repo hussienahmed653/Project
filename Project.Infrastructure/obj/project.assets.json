@@ -4884,11 +4884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Infrastructure\\Project.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Infrastructure\\Project.Infrastructure.csproj",
       "projectName": "Project.Infrastructure",
-      "projectPath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Infrastructure\\Project.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Infrastructure\\Project.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\hussi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4910,8 +4910,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Application\\Project.Application.csproj": {
-              "projectPath": "C:\\Users\\hussi\\source\\repos\\Project.Api\\Project.Application\\Project.Application.csproj"
+            "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Application\\Project.Application.csproj": {
+              "projectPath": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Application\\Project.Application.csproj"
             }
           }
         }

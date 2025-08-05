@@ -44,7 +44,7 @@ namespace Project.Application.Mapping.Employee
             employeeResponse.Country = employee.Country;
             employeeResponse.Extension = employee.Extension;
             employeeResponse.Notes = employee.Notes;
-            employeeResponse.Filepath = employee.EntityFiles?.ToArray()[0].Path.ToString();
+            employeeResponse.Filepath = employee.EntityFiles?.Select(f => f.Path).ToList();
 
             return employeeResponse;
         }
@@ -70,11 +70,11 @@ namespace Project.Application.Mapping.Employee
                     Country = item.Country,
                     Extension = item.Extension,
                     Notes = item.Notes,
-                    Filepath = item.EntityFiles?.ToArray()[0].Path.ToString() ?? null
+                    Filepath = item.EntityFiles?.Select(f => f.Path).ToList()
                 };
                 employeeResponse.Add(emp);
             }
-                return employeeResponse;
+            return employeeResponse;
         }
     }
 }
