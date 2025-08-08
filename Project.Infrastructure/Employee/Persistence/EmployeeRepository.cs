@@ -2,8 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
 using Project.Application.DTOs;
+using Project.Domain;
 using Project.Infrastructure.DBContext;
 using System.Diagnostics.Tracing;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace Project.Infrastructure.Employee.Persistence
 {
@@ -40,23 +43,42 @@ namespace Project.Infrastructure.Employee.Persistence
 
         public async Task<List<Domain.Employee>> GetAllEmployeesAsync()
         {
-            var query = from e in _context.Employees
-                        .Include(e => e.EmployeeTerritories)
-                        .Include(e => e.Orders)
-                        join f in _context.FilePaths
-                        on e.EmployeeGuid equals f.EntityGuid into ef
-                        select new
-                        {
-                            Employee = e,
-                            File = ef.ToList()
-                        };
-            var lists = await query.ToListAsync();
+            //var query = from e in _context.Employees
+            //            .Include(e => e.EmployeeTerritories)
+            //            .Include(e => e.Orders)
+            //            join f in _context.FilePaths
+            //            on e.EmployeeGuid equals f.EntityGuid into ef
+            //            select new
+            //            {
+            //                Employee = e,
+            //                File = ef.ToList()
+            //            };
+            //var lists = await query.ToListAsync();
 
-            foreach (var item in lists)
-            {
-                item.Employee.EntityFiles = item.File;
-            }
-            return lists.Select(l => l.Employee).ToList();
+            //foreach (var item in lists)
+            //{
+            //    item.Employee.EntityFiles = item.File;
+            //}
+            //return lists.Select(l => l.Employee).ToList();
+
+            //return await _context.Employees
+            //    .Include(e => e.Orders)
+            //    .Include(e => e.EmployeeTerritories)
+            //    .ToListAsync();
+            /*
+             
+            select e.* ,
+            (
+	            select Path from FilePaths f
+	            where f.EntityGuid = e.EmployeeGuid 
+	            for json path
+            ) as FilePaths
+            from Employees e
+            for json path
+             
+             */
+            var emp = await _context.Employees.FromSqlRaw("select e.*, f.path from Employees e , FilePaths f").ToListAsync();
+            return emp;
         }
 
         public async Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid)

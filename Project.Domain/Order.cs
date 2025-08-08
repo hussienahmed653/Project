@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Project.Domain
 {
@@ -13,6 +9,7 @@ namespace Project.Domain
         public int? CustomerID { get; set; }
         public Customer Customer { get; set; }
         public int? EmployeeID { get; set; }
+        [JsonIgnore]
         public Employee Employee { get; set; }
         public DateTime? OrderDate { get; set; }
         public DateTime? RequiredDate { get; set; }

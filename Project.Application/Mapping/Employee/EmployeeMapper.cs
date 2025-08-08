@@ -70,7 +70,9 @@ namespace Project.Application.Mapping.Employee
                     Country = item.Country,
                     Extension = item.Extension,
                     Notes = item.Notes,
-                    Filepath = item.EntityFiles?.Select(f => f.Path).ToList()
+                    Filepath = item.EntityFiles?.Select(f => f.Path).ToList(),
+                    Orders = item.Orders.ToList(),
+                    EmployeeTerritories = item.EmployeeTerritories.ToList()
                 };
                 employeeResponse.Add(emp);
             }

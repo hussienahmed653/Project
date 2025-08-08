@@ -43,7 +43,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Customer", b =>
@@ -94,7 +94,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Customers", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.CustomerCustomerDemo", b =>
@@ -109,7 +109,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("CustomerTypeID");
 
-                    b.ToTable("CustomerCustomerDemo");
+                    b.ToTable("CustomerCustomerDemo", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.CustomerDemographics", b =>
@@ -123,7 +123,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CustomerTypeID");
 
-                    b.ToTable("CustomerDemographics");
+                    b.ToTable("CustomerDemographics", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Employee", b =>
@@ -196,7 +196,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("ReportsTo");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Employees", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.EmployeeTerritorie", b =>
@@ -224,7 +224,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("EntityGuid", "Path");
 
-                    b.ToTable("FilePaths");
+                    b.ToTable("FilePaths", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Order", b =>
@@ -309,7 +309,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Product", b =>
@@ -363,7 +363,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("SupplierID");
 
-                    b.ToTable("Product");
+                    b.ToTable("Product", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Region", b =>
@@ -378,7 +378,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("RegionID");
 
-                    b.ToTable("Regions");
+                    b.ToTable("Regions", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Shipper", b =>
@@ -397,7 +397,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("ShipperID");
 
-                    b.ToTable("Shippers");
+                    b.ToTable("Shippers", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.Supplier", b =>
@@ -472,7 +472,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("RegionID");
 
-                    b.ToTable("Territorie");
+                    b.ToTable("Territorie", (string)null);
                 });
 
             modelBuilder.Entity("Project.Domain.CustomerCustomerDemo", b =>
