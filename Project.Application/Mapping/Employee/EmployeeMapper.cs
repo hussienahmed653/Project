@@ -48,35 +48,47 @@ namespace Project.Application.Mapping.Employee
 
             return employeeResponse;
         }
-        public static List<EmployeeResponseDto> GetEmployee(this List<Domain.Employee> employee)
+        public static List<EmployeeResponseDto> GetEmployee(this List<Domain.ViewEmployeeData> employee)
         {
-            var employeeResponse = new List<EmployeeResponseDto>();
-            foreach (var item in employee)
-            {
-                var emp = new EmployeeResponseDto
+            var groupemployee = employee
+                .GroupBy(e => e.EmployeeGuid)
+                .Select(g => new EmployeeResponseDto
                 {
-                    EmployeeGuid = item.EmployeeGuid,
-                    HomePhone = item.HomePhone,
-                    FirstName = item.FirstName,
-                    LastName = item.LastName,
-                    Title = item.Title,
-                    TitleOfCourtesy = item.TitleOfCourtesy,
-                    BirthDate = item.BirthDate,
-                    HireDate = item.HireDate,
-                    Address = item.Address,
-                    City = item.City,
-                    Region = item.Region,
-                    PostalCode = item.PostalCode,
-                    Country = item.Country,
-                    Extension = item.Extension,
-                    Notes = item.Notes,
-                    Filepath = item.EntityFiles?.Select(f => f.Path).ToList(),
-                    Orders = item.Orders.ToList(),
-                    EmployeeTerritories = item.EmployeeTerritories.ToList()
-                };
-                employeeResponse.Add(emp);
-            }
-            return employeeResponse;
+                    EmployeeGuid = g.Key,
+                    Address = g.First().Address,
+                    City = g.First().City,
+                    Country = g.First().Country,
+                    Extension = g.First().Extension,
+                    FirstName = g.First().FirstName,
+                    HomePhone = g.First().HomePhone,
+                    LastName = g.First().LastName,
+                    PostalCode = g.First().PostalCode,
+                    Region = g.First().Region,
+                    Title = g.First().Title,
+                    TitleOfCourtesy = g.First().TitleOfCourtesy,
+                    BirthDate = g.First().BirthDate,
+                    HireDate = g.First().HireDate,
+                    Notes = g.First().Notes,
+                    Filepath = g.Select(p => p.Path).ToList(),
+                    EmployeeTerritories = new List<Domain.EmployeeTerritorie>
+                    {
+                        new Domain.EmployeeTerritorie
+                        {
+                            TerritoryID = g.First().TerritoryID,
+                            territorie = new Domain.Territorie
+                            {
+                                TerritoryDescription = g.First().TerritoryDescription,
+                                RegionID = g.First().RegionID,
+                                Region = new Domain.Region
+                                {
+                                    RegionDescription = g.First().RegionDescription
+                                }
+                            }
+                        }
+                    },
+                    
+                }).ToList();
+            return groupemployee;
         }
     }
 }

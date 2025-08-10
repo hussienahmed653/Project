@@ -21,7 +21,6 @@ namespace Project.Application.DTOs
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public List<string>? Filepath { get; set; } = new List<string>();
-        public List<Order> Orders { get; set; } = new List<Order>();
         public List<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
     }
 }

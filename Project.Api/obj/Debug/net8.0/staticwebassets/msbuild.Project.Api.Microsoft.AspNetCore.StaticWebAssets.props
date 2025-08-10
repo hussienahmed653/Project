@@ -1,5 +1,23 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\30639379-2891-4461-9b27-dad26c56d99c.cs'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fh49d3eafj</Fingerprint>
+      <Integrity>8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\30639379-2891-4461-9b27-dad26c56d99c.cs'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.Api</SourceId>

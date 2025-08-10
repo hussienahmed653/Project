@@ -23,5 +23,6 @@ namespace Project.Infrastructure.DBContext
         public DbSet<Domain.CustomerDemographics> CustomerDemographics { get; set; }
         public DbSet<Shipper> Shippers { get; set; }
         public DbSet<FilePath> FilePaths { get; set; }
+        public DbSet<Domain.ViewEmployeeData> viewEmployeeDatas { get; set; }
     }
 }

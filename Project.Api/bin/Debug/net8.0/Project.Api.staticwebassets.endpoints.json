@@ -3,6 +3,88 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "AssetFile": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 01:24:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.fh49d3eafj.cs",
+      "AssetFile": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 01:24:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fh49d3eafj"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk="
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs"
+        }
+      ]
+    },
+    {
       "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
       "AssetFile": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
       "Selectors": [],

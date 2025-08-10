@@ -1,12 +1,6 @@
-﻿using ErrorOr;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
-using Project.Application.DTOs;
-using Project.Domain;
 using Project.Infrastructure.DBContext;
-using System.Diagnostics.Tracing;
-using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace Project.Infrastructure.Employee.Persistence
 {
@@ -41,11 +35,11 @@ namespace Project.Infrastructure.Employee.Persistence
                 .AnyAsync(e => e.EmployeeGuid == guid);
         }
 
-        public async Task<List<Domain.Employee>> GetAllEmployeesAsync()
+        public async Task<List<Domain.ViewEmployeeData>> GetAllEmployeesAsync()
         {
             //var query = from e in _context.Employees
-            //            .Include(e => e.EmployeeTerritories)
-            //            .Include(e => e.Orders)
+            //            //.Include(e => e.EmployeeTerritories)
+            //            //.Include(e => e.Orders)
             //            join f in _context.FilePaths
             //            on e.EmployeeGuid equals f.EntityGuid into ef
             //            select new
@@ -77,7 +71,7 @@ namespace Project.Infrastructure.Employee.Persistence
             for json path
              
              */
-            var emp = await _context.Employees.FromSqlRaw("select e.*, f.path from Employees e , FilePaths f").ToListAsync();
+            var emp = await _context.viewEmployeeDatas.ToListAsync();
             return emp;
         }
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+YxydPhV3FQn6rJw4voRQBHz4YxuyZHYuMRig0gLAGk=",
+  "Hash": "Lvrs/bUbuAxZL74kGCb2vSqArQ94V2jUygqlfYrxgfI=",
   "Source": "Project.Api",
   "BasePath": "_content/Project.Api",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "SourceId": "Project.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\",
+      "BasePath": "_content/Project.Api",
+      "RelativePath": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c#[.{fingerprint}]?.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fh49d3eafj",
+      "Integrity": "8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\30639379-2891-4461-9b27-dad26c56d99c.cs"
+    },
     {
       "Identity": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs",
       "SourceId": "Project.Api",
@@ -39,6 +60,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "AssetFile": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 01:24:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk="
+        }
+      ]
+    },
+    {
+      "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.fh49d3eafj.cs",
+      "AssetFile": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\30639379-2891-4461-9b27-dad26c56d99c.cs",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4771"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 01:24:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fh49d3eafj"
+        },
+        {
+          "Name": "label",
+          "Value": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk="
+        }
+      ]
+    },
     {
       "Route": "Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs",
       "AssetFile": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\\cdf34a8a-d21f-4206-88de-21944e51685b.cs",

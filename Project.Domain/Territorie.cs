@@ -7,7 +7,7 @@ namespace Project.Domain
         public int TerritoryID { get; set; }
         [MaxLength(50)]
         public string TerritoryDescription { get; set; }
-        public int RegionID { get; set; }
+        public int? RegionID { get; set; }
         public Region Region { get; set; }
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
     }
