@@ -33,7 +33,7 @@ namespace Project.Domain
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public string? Path { get; set; }
-        public int TerritoryID { get; set; }
+        public int? TerritoryID { get; set; }
         [MaxLength(50)]
         public string? TerritoryDescription { get; set; }
         public int? RegionID { get; set; }

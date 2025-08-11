@@ -31,14 +31,15 @@ namespace Project.Application.Employee.Queries.GetEmployee
                     var listofemployees = await _employeeRepository.GetAllEmployeesAsync();
 
                     if (listofemployees.Count is 0)
-                        throw new Exception("There is no Employees found.");
-                    await _unitOfWork.CommitAsync();
+                        return Error.NotFound(code: "NotFound", description: "There is no Employee");
                     //return listofemployees.Adapt<List<EmployeeResponseDto>>();
-                    return listofemployees.GetEmployee();
+                    var listofemployeesmapper = listofemployees.GetEmployee();
+                    await _unitOfWork.CommitAsync();
+                    return listofemployeesmapper;
                 }
                 var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
                 if (employee is null)
-                    throw new Exception("There is no Employee With This Guid");
+                    return Error.NotFound(code: "NotFound", description: "There is no Employee With This Guid");
                 //var employeemapper = employee.Adapt<EmployeeResponseDto>();
                 var employeemapper = employee.GetEmployee();
                 await _unitOfWork.CommitAsync();
@@ -47,7 +48,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
             catch
             {
                 await _unitOfWork.RollbackAsync();
-                throw new Exception("An error occurred while retrieving the employee");
+                return Error.Failure();
             }
         }
     }

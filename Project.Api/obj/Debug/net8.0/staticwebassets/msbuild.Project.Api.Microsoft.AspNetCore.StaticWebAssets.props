@@ -1,40 +1,40 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\30639379-2891-4461-9b27-dad26c56d99c.cs'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\4744a444-0587-424c-acd0-bc9dc1addc57\51c4c440-162f-4d0b-9e70-f2f50239e19f.cs'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.Api</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/30639379-2891-4461-9b27-dad26c56d99c.cs</RelativePath>
+      <RelativePath>Uplodes/4744a444-0587-424c-acd0-bc9dc1addc57/51c4c440-162f-4d0b-9e70-f2f50239e19f.cs</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fh49d3eafj</Fingerprint>
-      <Integrity>8/dfLKlAATA3Mk1r28JGSe8XQPx6ibFLrWCKLWOCTAk=</Integrity>
+      <Fingerprint>l7girca31o</Fingerprint>
+      <Integrity>kS2DUdHlvsQxNVyfSXvBOeiRxEYy6jSRCzYlOGugmS8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\30639379-2891-4461-9b27-dad26c56d99c.cs'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\4744a444-0587-424c-acd0-bc9dc1addc57\51c4c440-162f-4d0b-9e70-f2f50239e19f.cs'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\4744a444-0587-424c-acd0-bc9dc1addc57\5824776b-adf6-4ab0-945f-3dbdfe251fe4.cs'))">
       <SourceType>Package</SourceType>
       <SourceId>Project.Api</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Project.Api</BasePath>
-      <RelativePath>Uplodes/142ba824-c8d1-4bc8-90da-7d0d062b0ba8/cdf34a8a-d21f-4206-88de-21944e51685b.cs</RelativePath>
+      <RelativePath>Uplodes/4744a444-0587-424c-acd0-bc9dc1addc57/5824776b-adf6-4ab0-945f-3dbdfe251fe4.cs</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zx191dc24c</Fingerprint>
-      <Integrity>6VjAV/Zg6o31atcAJzGiGYrJlMgP0GJzLftZ1DDxcGw=</Integrity>
+      <Fingerprint>2uv2ylcmci</Fingerprint>
+      <Integrity>Vtz0mUqbqqn/XLj2Vs3JMue2qNvAlHaHRWLjtf4pE6w=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\4744a444-0587-424c-acd0-bc9dc1addc57\5824776b-adf6-4ab0-945f-3dbdfe251fe4.cs'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

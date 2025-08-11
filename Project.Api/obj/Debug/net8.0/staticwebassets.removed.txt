@@ -1,1 +1,2 @@
-C:\Users\hussi\Source\Repos\Project\Project.Api\wwwroot\Uplodes\c773cc11-8e8a-4219-82c0-7df9b62bb2e8\b4fe934d-5b15-4129-8e7d-c03d51bae058.cs
+C:\Users\hussi\Source\Repos\Project\Project.Api\wwwroot\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\30639379-2891-4461-9b27-dad26c56d99c.cs
+C:\Users\hussi\Source\Repos\Project\Project.Api\wwwroot\Uplodes\142ba824-c8d1-4bc8-90da-7d0d062b0ba8\cdf34a8a-d21f-4206-88de-21944e51685b.cs

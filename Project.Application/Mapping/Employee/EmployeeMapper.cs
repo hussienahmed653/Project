@@ -54,7 +54,7 @@ namespace Project.Application.Mapping.Employee
                 .GroupBy(e => e.EmployeeGuid)
                 .Select(g => new EmployeeResponseDto
                 {
-                    EmployeeGuid = g.Key,
+                    EmployeeGuid = g.Select(e => e.EmployeeGuid).FirstOrDefault(),
                     Address = g.First().Address,
                     City = g.First().City,
                     Country = g.First().Country,
@@ -69,23 +69,12 @@ namespace Project.Application.Mapping.Employee
                     BirthDate = g.First().BirthDate,
                     HireDate = g.First().HireDate,
                     Notes = g.First().Notes,
-                    Filepath = g.Select(p => p.Path).ToList(),
-                    EmployeeTerritories = new List<Domain.EmployeeTerritorie>
-                    {
-                        new Domain.EmployeeTerritorie
-                        {
-                            TerritoryID = g.First().TerritoryID,
-                            territorie = new Domain.Territorie
-                            {
-                                TerritoryDescription = g.First().TerritoryDescription,
-                                RegionID = g.First().RegionID,
-                                Region = new Domain.Region
-                                {
-                                    RegionDescription = g.First().RegionDescription
-                                }
-                            }
-                        }
-                    },
+                    ReportsTo = g.First().ReportsTo,
+                    Filepath = g.Select(p => p.Path).ToList()!,
+                    TerritoryID = g.Select(t => t.TerritoryID).ToList(),
+                    TerritoryDescription = g.Select(t => t.TerritoryDescription).ToList(),
+                    RegionID = g.Select(r => r.RegionID).ToList(),
+                    RegionDescription = g.Select(t => t.RegionDescription).ToList()
                     
                 }).ToList();
             return groupemployee;

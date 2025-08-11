@@ -35,7 +35,7 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
             catch
             {
                 await _unitOfWork.RollbackAsync();
-                throw new Exception("An error occurred while deleting the employee.");
+                return Error.Failure("Can't Delete this Employee!");
             }
 
         }

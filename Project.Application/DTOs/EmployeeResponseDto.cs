@@ -5,8 +5,8 @@ namespace Project.Application.DTOs
     public class EmployeeResponseDto
     {
         public Guid EmployeeGuid { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public string? Title { get; set; }
         public string? TitleOfCourtesy { get; set; }
         public DateTime? BirthDate { get; set; }
@@ -21,6 +21,9 @@ namespace Project.Application.DTOs
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public List<string>? Filepath { get; set; } = new List<string>();
-        public List<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
+        public List<int?> TerritoryID { get; set; } = new List<int?>();
+        public List<int?> RegionID { get; set; } = new List<int?>();
+        public List<string>? TerritoryDescription { get; set; } = new List<string>();
+        public List<string>? RegionDescription { get; set; } = new List<string>();
     }
 }
