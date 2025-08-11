@@ -37,61 +37,30 @@ namespace Project.Infrastructure.Employee.Persistence
 
         public async Task<List<Domain.ViewEmployeeData>> GetAllEmployeesAsync()
         {
-            //var query = from e in _context.Employees
-            //            //.Include(e => e.EmployeeTerritories)
-            //            //.Include(e => e.Orders)
-            //            join f in _context.FilePaths
-            //            on e.EmployeeGuid equals f.EntityGuid into ef
-            //            select new
-            //            {
-            //                Employee = e,
-            //                File = ef.ToList()
-            //            };
-            //var lists = await query.ToListAsync();
-
-            //foreach (var item in lists)
-            //{
-            //    item.Employee.EntityFiles = item.File;
-            //}
-            //return lists.Select(l => l.Employee).ToList();
-
-            //return await _context.Employees
-            //    .Include(e => e.Orders)
-            //    .Include(e => e.EmployeeTerritories)
-            //    .ToListAsync();
-            /*
-             
-            select e.* ,
-            (
-	            select Path from FilePaths f
-	            where f.EntityGuid = e.EmployeeGuid 
-	            for json path
-            ) as FilePaths
-            from Employees e
-            for json path
-             
-             */
             var emp = await _context.viewEmployeeDatas.ToListAsync();
             return emp;
         }
 
-        public async Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid)
+        public async Task<List<Domain.ViewEmployeeData>> GetEmployeeByGuIdAsync(Guid? guid)
         {
 
-            var query = from e in _context.Employees
-                        .Include(e => e.EmployeeTerritories)
-                        .Include(e => e.Orders)
-                        join f in _context.FilePaths
-                        on guid equals f.EntityGuid into ef
-                        select new 
-                        {
-                            Employee = e,
-                            File = ef.ToList()
-                        };
-            var list = await query.SingleOrDefaultAsync(e => e.Employee.EmployeeGuid == guid);
-            list.Employee.EntityFiles = list.File;
-            return list.Employee;
+            //var query = from e in _context.Employees
+            //            .Include(e => e.EmployeeTerritories)
+            //            .Include(e => e.Orders)
+            //            join f in _context.FilePaths
+            //            on guid equals f.EntityGuid into ef
+            //            select new 
+            //            {
+            //                Employee = e,
+            //                File = ef.ToList()
+            //            };
+            //var list = await query.SingleOrDefaultAsync(e => e.Employee.EmployeeGuid == guid);
+            //list.Employee.EntityFiles = list.File;
+            //return list.Employee;
 
+            return await _context.viewEmployeeDatas
+                .Where(e => e.EmployeeGuid == guid)
+                .ToListAsync();
         }
 
         public int GetMaxId()

@@ -33,7 +33,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
                     if (listofemployees.Count is 0)
                         return Error.NotFound(code: "NotFound", description: "There is no Employee");
                     //return listofemployees.Adapt<List<EmployeeResponseDto>>();
-                    var listofemployeesmapper = listofemployees.GetEmployee();
+                    var listofemployeesmapper = listofemployees.GetAllEmployees();
                     await _unitOfWork.CommitAsync();
                     return listofemployeesmapper;
                 }
@@ -41,7 +41,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
                 if (employee is null)
                     return Error.NotFound(code: "NotFound", description: "There is no Employee With This Guid");
                 //var employeemapper = employee.Adapt<EmployeeResponseDto>();
-                var employeemapper = employee.GetEmployee();
+                var employeemapper = employee.GetSingleEmployee();
                 await _unitOfWork.CommitAsync();
                 return new List<EmployeeResponseDto> { employeemapper };
             }

@@ -30,7 +30,7 @@ namespace Project.Application.Employee.Commands.UpdateEmployee
                     return Error.NotFound(code: "Not Found", description: "There is no Employee With this Guid");
                 request.UpdateEmployeeDTO.Adapt(employee);
 
-                await _employeeRepository.UpdateEmployeeAsync(employee);
+                //await _employeeRepository.UpdateEmployeeAsync(employee);
                 var employeemapper = employee.Adapt<EmployeeResponseDto>();
                 await _unitOfWork.CommitAsync();
                 return employeemapper;

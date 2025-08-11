@@ -2,7 +2,7 @@
 {
     public interface IEmployeeRepository
     {
-        public Task<Domain.Employee> GetEmployeeByGuIdAsync(Guid? guid);
+        public Task<List<Domain.ViewEmployeeData>> GetEmployeeByGuIdAsync(Guid? guid);
         public int GetMaxId();
         public Task<bool> ExistAsync(Guid guid);
         public Task<List<Domain.ViewEmployeeData>> GetAllEmployeesAsync();
