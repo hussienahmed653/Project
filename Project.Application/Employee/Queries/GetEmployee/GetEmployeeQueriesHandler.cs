@@ -38,7 +38,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
                     return listofemployeesmapper;
                 }
                 var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
-                if (employee is null)
+                if (employee.Count is 0)
                     return Error.NotFound(code: "NotFound", description: "There is no Employee With This Guid");
                 //var employeemapper = employee.Adapt<EmployeeResponseDto>();
                 var employeemapper = employee.GetSingleEmployee();

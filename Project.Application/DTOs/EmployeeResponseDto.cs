@@ -21,9 +21,6 @@ namespace Project.Application.DTOs
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public List<string>? Filepath { get; set; } = new List<string>();
-        public List<int?> TerritoryID { get; set; } = new List<int?>();
-        public List<int?> RegionID { get; set; } = new List<int?>();
-        public List<string>? TerritoryDescription { get; set; } = new List<string>();
-        public List<string>? RegionDescription { get; set; } = new List<string>();
+        public List<Territorie?> Territory { get; set; } = new List<Territorie?>();
     }
 }

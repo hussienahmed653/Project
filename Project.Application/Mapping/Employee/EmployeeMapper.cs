@@ -1,4 +1,5 @@
 ﻿using Project.Application.DTOs;
+using Project.Domain;
 
 namespace Project.Application.Mapping.Employee
 {
@@ -49,11 +50,23 @@ namespace Project.Application.Mapping.Employee
                     Notes = g.First().Notes,
                     ReportsTo = g.First().ReportsTo,
                     Filepath = g.Select(p => p.Path).ToList()!,
-                    TerritoryID = g.Select(t => t.TerritoryID).ToList(),
-                    TerritoryDescription = g.Select(t => t.TerritoryDescription).ToList(),
-                    RegionID = g.Select(r => r.RegionID).ToList(),
-                    RegionDescription = g.Select(t => t.RegionDescription).ToList()
-                    
+                    Territory = g
+                        .GroupBy(x => x.TerritoryID)
+                        .Select(grp => new Territorie
+                        {
+                            TerritoryID = grp.Key ?? 0,
+                            TerritoryDescription = grp.Select(x => x.TerritoryDescription).FirstOrDefault() ?? string.Empty,
+                            Region = grp
+                                .Where(x => x.RegionID != null)
+                                .Select(x => new Region
+                                {
+                                    RegionID = x.RegionID ?? 0,
+                                    RegionDescription = x.RegionDescription ?? string.Empty
+                                })
+                                .FirstOrDefault()! 
+                        })
+                        .ToList()!
+
                 }).ToList();
             return groupemployee;
 
@@ -80,16 +93,24 @@ namespace Project.Application.Mapping.Employee
                   null
                 ],
                 "territoryID": [
-                  1
+                  1,
+                  2,
+                  5  
                 ],
                 "regionID": [
-                  1
+                  1,
+                  null,
+                  7  
                 ],
                 "territoryDescription": [
-                  "Fresh Brussels sprouts."
+                  "Fresh Brussels sprouts.",
+                   "jjjjjjjjjjj",
+                    "sdhgdada"
                 ],
                 "regionDescription": [
-                  "Non-slip mat exercises."
+                  "Non-slip mat exercises.",
+                    null,
+                   "jlkjfhdjfdf"
                 ]
             },
              
@@ -117,31 +138,23 @@ namespace Project.Application.Mapping.Employee
                     Notes = g.First().Notes,
                     ReportsTo = g.First().ReportsTo,
                     Filepath = g.Select(p => p.Path).ToList()!,
-                    TerritoryID = g.Select(t => t.TerritoryID).ToList(),
-                    TerritoryDescription = g.Select(t => t.TerritoryDescription).ToList()!,
-                    RegionID = g.Select(r => r.RegionID).ToList(),
-                    RegionDescription = g.Select(t => t.RegionDescription).ToList()
+                    Territory = g
+                        .GroupBy(x => x.TerritoryID)
+                        .Select(grp => new Territorie
+                        {
+                            TerritoryID = grp.Key ?? 0,
+                            TerritoryDescription = grp.Select(x => x.TerritoryDescription).FirstOrDefault() ?? string.Empty,
+                            Region = grp
+                                .Where(x => x.RegionID != null)
+                                .Select(x => new Region
+                                {
+                                    RegionID = x.RegionID ?? 0,
+                                    RegionDescription = x.RegionDescription ?? string.Empty
+                                })
+                                .FirstOrDefault()!
+                        })
+                        .ToList()!
                 }).FirstOrDefault()!;
-            //var employeeResponse = new EmployeeResponseDto();
-            //employeeResponse.EmployeeGuid = employee.EmployeeGuid;
-            //employeeResponse.HomePhone = employee.HomePhone;
-            //employeeResponse.FirstName = employee.FirstName;
-            //employeeResponse.LastName = employee.LastName;
-            //employeeResponse.Title = employee.Title;
-            //employeeResponse.TitleOfCourtesy = employee.TitleOfCourtesy;
-            //employeeResponse.BirthDate = employee.BirthDate;
-            //employeeResponse.HireDate = employee.HireDate;
-            //employeeResponse.Address = employee.Address;
-            //employeeResponse.City = employee.City;
-            //employeeResponse.Region = employee.Region;
-            //employeeResponse.PostalCode = employee.PostalCode;
-            //employeeResponse.Country = employee.Country;
-            //employeeResponse.Extension = employee.Extension;
-            //employeeResponse.Notes = employee.Notes;
-            //employeeResponse.ReportsTo = employee.ReportsTo;
-            //employeeResponse.Filepath = employee.EntityFiles?.Select(f => f.Path).ToList();
-
-            //return employeeResponse;
         }
     }
 }
