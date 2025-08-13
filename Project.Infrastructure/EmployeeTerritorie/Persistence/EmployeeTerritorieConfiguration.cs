@@ -13,11 +13,13 @@ namespace Project.Infrastructure.EmployeeTerritorie.Persistence
 
             builder.HasOne(et => et.employee)
                 .WithMany(e => e.EmployeeTerritories)
-                .HasForeignKey(et => et.EmployeeID);
+                .HasForeignKey(et => et.EmployeeID)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(et => et.territorie)
                 .WithMany(t => t.EmployeeTerritories)
-                .HasForeignKey(et => et.TerritoryID);
+                .HasForeignKey(et => et.TerritoryID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

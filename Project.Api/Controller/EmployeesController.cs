@@ -21,49 +21,35 @@ namespace Project.Api.Controller
         [HttpPost("AddEmployee")]
         public async Task<IActionResult> AddEmployee([FromBody] AddEmployeeDto addEmployeeDTO)
         {
-            //try
-            //{
-            var command = new CreateEmployeeCommand(addEmployeeDTO);
-            var result = await _mediator.Send(command);
-            //return Ok(new
-            //{
-            //    iserror = result.IsError,
-            //    value = result.Value,
-            //    errortype = result.Errors
-            //});
+            var result = await _mediator.Send(new CreateEmployeeCommand(addEmployeeDTO));
             return ProblemOr(result);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return Problem(statusCode: 404);
-            //}
         }
         
-
-
         [HttpDelete("DeleteEmployee/{guid}")]
         public async Task<IActionResult> DeleteEmployee(Guid guid)
         {
                 var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
                 return ProblemOr(result);
         }
+
         [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
                 var result = await _mediator.Send(new GetEmployeeQueries(null));
                 return ProblemOr(result);
         }
+
         [HttpGet("GetEmployeeByGuid/{guid}")]
         public async Task<IActionResult> GetEmployeeByGuid(Guid guid)
         {
                 var result = await _mediator.Send(new GetEmployeeQueries(guid));
                 return ProblemOr(result);
         }
+
         [HttpPut("UpdateEmployee")]
         public async Task<IActionResult> UpdateEmployee([FromForm] UpdateEmployeeDto updateEmployeeDto)
         {
-            var command = new UpdateEmployeeCommand(updateEmployeeDto);
-            var result = await _mediator.Send(command);
+            var result = await _mediator.Send(new UpdateEmployeeCommand(updateEmployeeDto));
             return ProblemOr(result);
         }
 

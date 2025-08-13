@@ -19,10 +19,10 @@ namespace Project.Infrastructure.Employee.Persistence
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteEmployeeAsync(int id)
+        public Task DeleteEmployeeAsync(Guid guid)
         {
             _context.Employees
-                .Where(e => e.EmployeeID == id)
+                .Where(e => e.EmployeeGuid == guid)
                 .AsNoTracking()
                 .ExecuteDelete();
             return Task.CompletedTask;
@@ -35,13 +35,13 @@ namespace Project.Infrastructure.Employee.Persistence
                 .AnyAsync(e => e.EmployeeGuid == guid);
         }
 
-        public async Task<List<Domain.ViewEmployeeData>> GetAllEmployeesAsync()
+        public async Task<List<Domain.ViewClasses.ViewEmployeeData>> GetAllEmployeesAsync()
         {
             var emp = await _context.viewEmployeeDatas.ToListAsync();
             return emp;
         }
 
-        public async Task<List<Domain.ViewEmployeeData>> GetEmployeeByGuIdAsync(Guid? guid)
+        public async Task<List<Domain.ViewClasses.ViewEmployeeData>> GetEmployeeByGuIdAsync(Guid? guid)
         {
 
             //var query = from e in _context.Employees

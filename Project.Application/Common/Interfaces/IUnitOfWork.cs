@@ -5,5 +5,6 @@
         public Task BeginTransactionAsync();
         public Task CommitAsync();
         public Task RollbackAsync();
+        public Task<bool> IfProbIsEmpty(object obj);
     }
 }

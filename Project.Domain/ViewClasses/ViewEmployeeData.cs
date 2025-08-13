@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Project.Domain
+namespace Project.Domain.ViewClasses
 {
     public class ViewEmployeeData
     {

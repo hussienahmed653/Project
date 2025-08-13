@@ -2,6 +2,7 @@
 using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.Mapping.Employee;
+using Project.Domain;
 
 namespace Project.Application.Employee.Commands.CreateEmployee
 {
@@ -10,6 +11,7 @@ namespace Project.Application.Employee.Commands.CreateEmployee
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _genericUploadeEntityFile;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly List<string> _allowedExtensions = new() { ".jpg", ".png", ".gif" };
 
         public CreateEmployeeCommandHandler(IEmployeeRepository employeeRepository,
             IEntityFileRepository genericUploadeEntityFile,
@@ -25,8 +27,19 @@ namespace Project.Application.Employee.Commands.CreateEmployee
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
+                var ifprobisempty = await _unitOfWork.IfProbIsEmpty(request.EmployeeDTO);
+                if(ifprobisempty)
+                    return Error.Validation("Validation Type Error", "Fields should'nt be Empty");
 
                 var id = _employeeRepository.GetMaxId();
+
+                if(request.EmployeeDTO.HireDate > DateTime.Now || request.EmployeeDTO.BirthDate > DateTime.Now)
+                    return Error.Validation(code : "Validation Type Error", "Hire and Birth date cannot be in the future.");
+                if(request.EmployeeDTO.Extension is not null && !_allowedExtensions.Contains(request.EmployeeDTO.Extension))
+                    return Error.Validation("Validation Type Error", "Extension is not allowed. , It must be { " + $"{string.Join(", ", _allowedExtensions)}" + " }");
+                if (request.EmployeeDTO is { ReportsTo: <= 0} || request.EmployeeDTO.ReportsTo > id)
+                    return Error.Validation("Validation Type Error", "ReportsTo must reference an existing Employee ID.");
+
                 var employeemapper = request.EmployeeDTO.AddEmployeeMapper();
 
                 employeemapper.EmployeeID = id + 1;

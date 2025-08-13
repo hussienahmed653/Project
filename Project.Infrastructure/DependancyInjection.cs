@@ -2,11 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Project.Application.Common.Interfaces;
-using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
 using Project.Infrastructure.FilePaths.Persistence;
-using Project.Infrastructure.Transactions.Persistence;
+using Project.Infrastructure.UniteOfWork.Persistence;
 
 namespace Project.Infrastructure
 {
@@ -19,7 +18,7 @@ namespace Project.Infrastructure
                                                         option.UseSqlServer(connectionstring));
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEntityFileRepository ,EntityFileRepository>();
-            services.AddScoped<IUnitOfWork, UniteOfWork>();
+            services.AddScoped<IUnitOfWork, UniteOfWorkRepository>();
             
             return services;
         }

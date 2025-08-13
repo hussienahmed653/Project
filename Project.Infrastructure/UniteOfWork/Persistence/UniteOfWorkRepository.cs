@@ -1,15 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using Project.Application.Common.Interfaces;
 using Project.Infrastructure.DBContext;
+using System.Reflection.Metadata.Ecma335;
 
-namespace Project.Infrastructure.Transactions.Persistence
+namespace Project.Infrastructure.UniteOfWork.Persistence
 {
-    internal class UniteOfWork : IUnitOfWork
+    internal class UniteOfWorkRepository : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
         private IDbContextTransaction? _transaction;
 
-        public UniteOfWork(ApplicationDbContext context)
+        public UniteOfWorkRepository(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -28,6 +29,14 @@ namespace Project.Infrastructure.Transactions.Persistence
                 await _transaction.DisposeAsync();
                 _transaction = null;
             }
+        }
+
+        public async Task<bool> IfProbIsEmpty(object obj)
+        {
+            return obj.GetType()
+                .GetProperties()
+                .Where(p => p.PropertyType == typeof(string))
+                .Any(p => p.GetValue(obj) is not null && p.GetValue(obj) == "");
         }
 
         public async Task RollbackAsync()

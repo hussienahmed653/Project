@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Project.Infrastructure.ViewEmployeeData.Persistence
 {
-    internal class ViewEmployeeDataConfiguration : IEntityTypeConfiguration<Domain.ViewEmployeeData>
+    internal class ViewEmployeeDataConfiguration : IEntityTypeConfiguration<Domain.ViewClasses.ViewEmployeeData>
     {
-        public void Configure(EntityTypeBuilder<Domain.ViewEmployeeData> builder)
+        public void Configure(EntityTypeBuilder<Domain.ViewClasses.ViewEmployeeData> builder)
         {
             builder.HasNoKey()
                 .ToView("ViewEmployeeData");

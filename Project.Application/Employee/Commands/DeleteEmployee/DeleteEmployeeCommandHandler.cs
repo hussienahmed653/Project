@@ -10,9 +10,9 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
         private readonly IEntityFileRepository _entityFileRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteEmployeeCommandHandler(IEmployeeRepository employeeRepository
-            , IEntityFileRepository entityFileRepository
-            , IUnitOfWork unitOfWork)
+        public DeleteEmployeeCommandHandler(IEmployeeRepository employeeRepository,
+            IEntityFileRepository entityFileRepository,
+            IUnitOfWork unitOfWork)
         {
             _employeeRepository = employeeRepository;
             _entityFileRepository = entityFileRepository;
@@ -28,7 +28,7 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
                     return Error.NotFound(description: "There is no Employee with this guid");
                 var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
 
-                await _employeeRepository.DeleteEmployeeAsync(employee.Select(e => e.EmployeeID).SingleOrDefault());
+                await _employeeRepository.DeleteEmployeeAsync(employee.Select(e => e.EmployeeGuid).SingleOrDefault());
                 await _unitOfWork.CommitAsync();
                 return true;
             }

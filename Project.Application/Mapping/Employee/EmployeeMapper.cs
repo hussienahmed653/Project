@@ -1,5 +1,6 @@
 ﻿using Project.Application.DTOs;
 using Project.Domain;
+using Project.Domain.ViewClasses;
 
 namespace Project.Application.Mapping.Employee
 {
@@ -27,9 +28,9 @@ namespace Project.Application.Mapping.Employee
             return employee;
         }
 
-        public static List<EmployeeResponseDto> GetAllEmployees(this List<Domain.ViewEmployeeData> employee)
+        public static List<EmployeeResponseDto> GetAllEmployees(this List<ViewEmployeeData> employee)
         {
-            var groupemployee = employee
+            return employee
                 .GroupBy(e => e.EmployeeGuid)
                 .Select(g => new EmployeeResponseDto
                 {
@@ -68,55 +69,8 @@ namespace Project.Application.Mapping.Employee
                         .ToList()!
 
                 }).ToList();
-            return groupemployee;
-
-            /*
-             
-            {
-                "employeeGuid": "c391e89e-c4d6-4d92-a7c3-04d70024d7a2",
-                "firstName": "Hernando",
-                "lastName": "Ply",
-                "title": "Dr",
-                "titleOfCourtesy": "Guatemala",
-                "birthDate": "2025-06-23T00:00:00",
-                "hireDate": "2024-09-10T00:00:00",
-                "address": "Room 713",
-                "city": "SantaCruzMuluá",
-                "region": "PG-SHM",
-                "postalCode": "11006",
-                "country": "Peru",
-                "homePhone": "397-644-7957",
-                "extension": "#1ec",
-                "notes": "Dusky rattlesnake",
-                "reportsTo": 1,
-                "filepath": [
-                  null
-                ],
-                "territoryID": [
-                  1,
-                  2,
-                  5  
-                ],
-                "regionID": [
-                  1,
-                  null,
-                  7  
-                ],
-                "territoryDescription": [
-                  "Fresh Brussels sprouts.",
-                   "jjjjjjjjjjj",
-                    "sdhgdada"
-                ],
-                "regionDescription": [
-                  "Non-slip mat exercises.",
-                    null,
-                   "jlkjfhdjfdf"
-                ]
-            },
-             
-             */
         }
-        public static EmployeeResponseDto GetSingleEmployee(this List<Domain.ViewEmployeeData> employee)
+        public static EmployeeResponseDto GetSingleEmployee(this List<ViewEmployeeData> employee)
         {
             return employee.GroupBy(e => e.EmployeeGuid)
                 .Select(g => new EmployeeResponseDto
