@@ -60,7 +60,9 @@ namespace Project.Infrastructure.Employee.Persistence
 
         public async Task<Domain.Employee> GetTableEmployeesAsync(Guid guid)
         {
-            return await _context.Employees.SingleOrDefaultAsync(e => e.EmployeeGuid == guid);
+            return await _context.Employees
+                .Include(e => e.EmployeeTerritories)
+                .SingleOrDefaultAsync(e => e.EmployeeGuid == guid);
         }
     }
 }

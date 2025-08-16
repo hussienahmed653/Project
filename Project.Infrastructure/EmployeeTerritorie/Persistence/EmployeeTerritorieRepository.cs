@@ -25,9 +25,19 @@ namespace Project.Infrastructure.EmployeeTerritorie.Persistence
 
         public async Task<bool> ExistAsync(int terid, int empid)
         {
-            return await _context.Employees
-                .Where(e => e.EmployeeTerritories.Any(et => et.TerritoryID != terid && et.EmployeeID != empid) 
-                && e.EmployeeTerritories.Any(t => t.territorie.TerritoryID == terid)).AnyAsync();
+            //return await _context.Employees
+            //    .Where(e => e.EmployeeTerritories.Any(et => et.TerritoryID != terid && et.EmployeeID != empid) 
+            //    && e.EmployeeTerritories.Any(t => t.territorie.TerritoryID == terid)).AnyAsync();
+
+            return await _context.EmployeeTerritories
+                .AnyAsync(et => et.TerritoryID == terid && et.EmployeeID == empid);
+
+        }
+
+        public async Task RemoveTerritoryFromEmployee(Domain.EmployeeTerritorie entity)
+        {
+            _context.EmployeeTerritories.Remove(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

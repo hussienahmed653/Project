@@ -17,6 +17,8 @@ namespace Project.Infrastructure.DBContext
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Domain.Employee> Employees { get; set; }
+        public DbSet<Domain.EmployeeTerritorie> EmployeeTerritories { get; set; }
+        public DbSet<Territorie> Territorie { get; set; }
         public DbSet<Domain.Region> Regions { get; set; }
         public DbSet<Domain.Categories> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }

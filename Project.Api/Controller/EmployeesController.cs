@@ -4,6 +4,7 @@ using Project.Application.DTOs;
 using Project.Application.Employee.Commands.AddTerritoryToEmployee;
 using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Application.Employee.Commands.DeleteEmployee;
+using Project.Application.Employee.Commands.RemoveTerritoryFromEmployee;
 using Project.Application.Employee.Commands.UpdateEmployee;
 using Project.Application.Employee.Queries.GetEmployee;
 
@@ -36,6 +37,12 @@ namespace Project.Api.Controller
         public async Task<IActionResult> DeleteEmployee(Guid guid)
         {
                 var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
+                return ProblemOr(result);
+        }
+        [HttpDelete("DeleteTerritoryFromEmployee")]
+        public async Task<IActionResult> DeleteTerritoryFromEmployee(Guid EmployeeGuid, int TerritoryId)
+        {
+                var result = await _mediator.Send(new RemoveTerritoryFromEmployeeCommand(EmployeeGuid, TerritoryId));
                 return ProblemOr(result);
         }
 

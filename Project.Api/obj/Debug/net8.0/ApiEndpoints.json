@@ -54,6 +54,27 @@
   },
   {
     "ContainingType": "Project.Api.Controller.EmployeesController",
+    "Method": "DeleteTerritoryFromEmployee",
+    "RelativePath": "api/Employees/DeleteTerritoryFromEmployee",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EmployeeGuid",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "TerritoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.EmployeesController",
     "Method": "GetAllEmployees",
     "RelativePath": "api/Employees/GetAllEmployees",
     "HttpMethod": "GET",
