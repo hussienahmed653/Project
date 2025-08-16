@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Project.Application.Common.Interfaces;
 using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
+using Project.Infrastructure.EmployeeTerritorie.Persistence;
 using Project.Infrastructure.FilePaths.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
 
@@ -19,6 +20,7 @@ namespace Project.Infrastructure
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEntityFileRepository ,EntityFileRepository>();
             services.AddScoped<IUnitOfWork, UniteOfWorkRepository>();
+            services.AddScoped<IEmployeeTerritorieRepository, EmployeeTerritorieRepository>();
             
             return services;
         }

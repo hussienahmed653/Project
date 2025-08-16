@@ -4,33 +4,34 @@ using Project.Application.Common.Interfaces;
 
 namespace Project.Application.Employee.Commands.DeleteEmployee
 {
-    public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, ErrorOr<bool>>
+    public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, ErrorOr<Deleted>>
     {
         private readonly IEmployeeRepository _employeeRepository;
-        private readonly IEntityFileRepository _entityFileRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public DeleteEmployeeCommandHandler(IEmployeeRepository employeeRepository,
-            IEntityFileRepository entityFileRepository,
             IUnitOfWork unitOfWork)
         {
             _employeeRepository = employeeRepository;
-            _entityFileRepository = entityFileRepository;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ErrorOr<bool>> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Deleted>> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if (!await _employeeRepository.ExistAsync(request.Guid))
-                    return Error.NotFound(description: "There is no Employee with this guid");
-                var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.Guid);
 
-                await _employeeRepository.DeleteEmployeeAsync(employee.Select(e => e.EmployeeGuid).SingleOrDefault());
+                if (!await _employeeRepository.ExistAsync(request.Guid))
+                    return Error.NotFound("NotFound", "There is no Employee with this guid");
+
+                var employee = await _employeeRepository.GetTableEmployeesAsync(request.Guid);
+                employee.IsDeleted = true;
+                employee.DeletedOn = DateTime.UtcNow;
+
+                await _employeeRepository.DeleteEmployeeAsync();
                 await _unitOfWork.CommitAsync();
-                return true;
+                return Result.Deleted;
             }
             catch
             {

@@ -8,9 +8,20 @@ namespace Project.Api.Controller
         protected IActionResult ProblemOr<T>(ErrorOr<T> result)
         {
             if(result.IsError)
+            {
                 return Problem(result.Errors.ToList());
+            }
+
+
+            if (result.Value is Deleted)
+                return NoContent();
+            if(result.Value is Created)
+                return Created("Created","Territory Added To Employee");
+
+
             return Ok(result.Value);
         }
+
 
         private IActionResult Problem(List<Error> errors)
         {

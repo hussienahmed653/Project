@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.Infrastructure.DBContext;
 
@@ -11,9 +12,11 @@ using Project.Infrastructure.DBContext;
 namespace Project.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250814012329_AddingIsDeletedPropForEmployee")]
+    partial class AddingIsDeletedPropForEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,9 +148,6 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("Country")
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("EmployeeGuid")
                         .HasColumnType("uniqueidentifier");
@@ -518,9 +518,6 @@ namespace Project.Infrastructure.Migrations
                     b.Property<string>("HomePhone")
                         .HasMaxLength(24)
                         .HasColumnType("nvarchar(24)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasMaxLength(20)

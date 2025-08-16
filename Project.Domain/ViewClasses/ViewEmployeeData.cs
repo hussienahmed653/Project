@@ -32,6 +32,8 @@ namespace Project.Domain.ViewClasses
         public string? Extension { get; set; }
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedOn { get; set; }
         public string? Path { get; set; }
         public int? TerritoryID { get; set; }
         [MaxLength(50)]

@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.DTOs;
+using Project.Application.Employee.Commands.AddTerritoryToEmployee;
 using Project.Application.Employee.Commands.CreateEmployee;
 using Project.Application.Employee.Commands.DeleteEmployee;
 using Project.Application.Employee.Commands.UpdateEmployee;
@@ -22,6 +23,12 @@ namespace Project.Api.Controller
         public async Task<IActionResult> AddEmployee([FromBody] AddEmployeeDto addEmployeeDTO)
         {
             var result = await _mediator.Send(new CreateEmployeeCommand(addEmployeeDTO));
+            return ProblemOr(result);
+        }
+        [HttpPost("AddEmployeeToTerritory")]
+        public async Task<IActionResult> AddEmployeeToTerritory(Guid EmployeeGuid, int TerritoryId)
+        {
+            var result = await _mediator.Send(new AddTerritoryToEmployeeCommand(EmployeeGuid, TerritoryId));
             return ProblemOr(result);
         }
         

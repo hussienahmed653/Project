@@ -20,6 +20,8 @@ namespace Project.Application.DTOs
         public string? Extension { get; set; }
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedOn { get; set; }
         public List<string>? Filepath { get; set; } = new List<string>();
         public List<Territorie?> Territory { get; set; } = new List<Territorie?>();
     }

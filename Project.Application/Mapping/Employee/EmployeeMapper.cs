@@ -50,6 +50,8 @@ namespace Project.Application.Mapping.Employee
                     HireDate = g.First().HireDate,
                     Notes = g.First().Notes,
                     ReportsTo = g.First().ReportsTo,
+                    IsDeleted = g.First().IsDeleted,
+                    DeletedOn = g.First().DeletedOn,
                     Filepath = g.Select(p => p.Path).ToList()!,
                     Territory = g
                         .GroupBy(x => x.TerritoryID)
@@ -91,6 +93,8 @@ namespace Project.Application.Mapping.Employee
                     HireDate = g.First().HireDate,
                     Notes = g.First().Notes,
                     ReportsTo = g.First().ReportsTo,
+                    IsDeleted = g.First().IsDeleted,
+                    DeletedOn = g.First().DeletedOn,
                     Filepath = g.Select(p => p.Path).ToList()!,
                     Territory = g
                         .GroupBy(x => x.TerritoryID)

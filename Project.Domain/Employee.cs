@@ -34,6 +34,8 @@ namespace Project.Domain
         public string? Notes { get; set; }
         public int? ReportsTo { get; set; }
         public Employee Manager { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public DateTime? DeletedOn { get; set; }
         public ICollection<Employee> employee { get; set; } = new List<Employee>();
         public ICollection<EmployeeTerritorie> EmployeeTerritories { get; set; } = new List<EmployeeTerritorie>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();

@@ -25,7 +25,7 @@ namespace Project.Application.Employee.Commands.UpdateEmployee
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                var employee = await _employeeRepository.GetEmployeeByGuIdAsync(request.UpdateEmployeeDTO.EmployeeGuid);
+                var employee = await _employeeRepository.GetTableViewEmployeeByGuIdAsync(request.UpdateEmployeeDTO.EmployeeGuid);
                 if (employee is null)
                     return Error.NotFound(code: "Not Found", description: "There is no Employee With this Guid");
                 request.UpdateEmployeeDTO.Adapt(employee);
