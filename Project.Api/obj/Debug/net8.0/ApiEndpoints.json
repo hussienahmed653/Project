@@ -219,6 +219,22 @@
   },
   {
     "ContainingType": "Project.Api.Controller.ProductsController",
+    "Method": "AddProduct",
+    "RelativePath": "api/Products/AddProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addProductDto",
+        "Type": "Project.Application.DTOs.AddProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.ProductsController",
     "Method": "GetAllProductsAsync",
     "RelativePath": "api/Products/GetAllProductsAsync",
     "HttpMethod": "GET",

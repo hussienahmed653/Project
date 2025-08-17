@@ -4,5 +4,7 @@
     {
         Task<List<Domain.ViewClasses.ViewProductData>> GetAllProductsAsync();
         Task<List<Domain.ViewClasses.ViewProductData>> GetProductByGuidAsync(int id);
+        Task<int> GetMaxId();
+        Task AddProductAsync(Domain.Product product);
     }
 }

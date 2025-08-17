@@ -84,5 +84,21 @@ namespace Project.Application.Mapping.Product
                     }).ToList()
                 }).FirstOrDefault()!;
         }
+
+        public static Domain.Product AddNewProductMapper(this AddProductDto addProductDto)
+        {
+            return new Domain.Product
+            {
+                ProductName = addProductDto.ProductName,
+                SupplierID = addProductDto.SupplierID,
+                CategoryID = addProductDto.CategoryID,
+                QuantityPerUnit = addProductDto.QuantityPerUnit,
+                UnitPrice = addProductDto.UnitPrice ?? 0,
+                UnitsInStock = addProductDto.UnitsInStock ?? 0,
+                UnitsOnOrder = addProductDto.UnitsOnOrder ?? 0,
+                ReorderLevel = addProductDto.ReorderLevel ?? 0,
+                Discontinued = addProductDto.Discontinued
+            };
+        }
     }
 }

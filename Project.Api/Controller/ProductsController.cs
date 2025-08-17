@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Project.Application.DTOs;
+using Project.Application.Product.Commands;
 using Project.Application.Product.Queries.GetProduct;
 
 namespace Project.Api.Controller
@@ -13,6 +15,13 @@ namespace Project.Api.Controller
         public ProductsController(ISender mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpPost("AddProduct")]
+        public async Task<IActionResult> AddProduct(AddProductDto addProductDto)
+        {
+            var result = await _mediator.Send(new CreateProductCommand(addProductDto));
+            return ProblemOr(result);
         }
 
         [HttpGet("GetAllProductsAsync")]
