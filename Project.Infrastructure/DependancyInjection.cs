@@ -6,6 +6,7 @@ using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
 using Project.Infrastructure.EmployeeTerritorie.Persistence;
 using Project.Infrastructure.FilePaths.Persistence;
+using Project.Infrastructure.Products.Persistence;
 using Project.Infrastructure.Territories.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
 
@@ -23,6 +24,7 @@ namespace Project.Infrastructure
             services.AddScoped<IUnitOfWork, UniteOfWorkRepository>();
             services.AddScoped<IEmployeeTerritorieRepository, EmployeeTerritorieRepository>();
             services.AddScoped<ITerritorieRepository, TerritorieRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             
             return services;
         }

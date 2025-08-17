@@ -28,7 +28,7 @@ namespace Project.Application.Mapping.Employee
             return employee;
         }
 
-        public static List<EmployeeResponseDto> GetAllEmployees(this List<ViewEmployeeData> employee)
+        public static List<EmployeeResponseDto> GetAllEmployeesMapper(this List<ViewEmployeeData> employee)
         {
             return employee
                 .GroupBy(e => e.EmployeeGuid)
@@ -72,7 +72,7 @@ namespace Project.Application.Mapping.Employee
 
                 }).ToList();
         }
-        public static EmployeeResponseDto GetSingleEmployee(this List<ViewEmployeeData> employee)
+        public static EmployeeResponseDto GetSingleEmployeeMapper(this List<ViewEmployeeData> employee)
         {
             return employee.GroupBy(e => e.EmployeeGuid)
                 .Select(g => new EmployeeResponseDto

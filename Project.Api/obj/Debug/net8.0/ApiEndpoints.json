@@ -216,5 +216,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.ProductsController",
+    "Method": "GetAllProductsAsync",
+    "RelativePath": "api/Products/GetAllProductsAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.ProductsController",
+    "Method": "GetSingleProductsAsync",
+    "RelativePath": "api/Products/GetSingleProductsAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

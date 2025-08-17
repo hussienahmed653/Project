@@ -32,14 +32,14 @@ namespace Project.Application.Employee.Queries.GetEmployee
 
                     if (listofemployees.Count is 0)
                         return Error.NotFound(code: "NotFound", description: "There is no Employee");
-                    var listofemployeesmapper = listofemployees.GetAllEmployees();
+                    var listofemployeesmapper = listofemployees.GetAllEmployeesMapper();
                     await _unitOfWork.CommitAsync();
                     return listofemployeesmapper;
                 }
                 var employee = await _employeeRepository.GetTableViewEmployeeByGuIdAsync(request.Guid);
                 if (employee.Count is 0)
                     return Error.NotFound(code: "NotFound", description: "There is no Employee With This Guid");
-                var employeemapper = employee.GetSingleEmployee();
+                var employeemapper = employee.GetSingleEmployeeMapper();
                 await _unitOfWork.CommitAsync();
                 return new List<EmployeeResponseDto> { employeemapper };
             }
