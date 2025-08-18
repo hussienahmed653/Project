@@ -235,6 +235,22 @@
   },
   {
     "ContainingType": "Project.Api.Controller.ProductsController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/Products/DeleteProduct",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.ProductsController",
     "Method": "GetAllProductsAsync",
     "RelativePath": "api/Products/GetAllProductsAsync",
     "HttpMethod": "GET",

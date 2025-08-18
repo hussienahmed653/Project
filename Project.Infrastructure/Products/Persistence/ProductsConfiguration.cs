@@ -34,11 +34,13 @@ namespace Project.Infrastructure.Products.Persistence
 
             builder.HasOne(p => p.supplier)
                 .WithMany(p => p.Products)
-                .HasForeignKey(p => p.SupplierID);
+                .HasForeignKey(p => p.SupplierID)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(p => p.category)
                 .WithMany(p => p.Products)
-                .HasForeignKey(p => p.CategoryID);
+                .HasForeignKey(p => p.CategoryID)
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

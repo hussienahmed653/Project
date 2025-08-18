@@ -20,6 +20,7 @@ namespace Project.Infrastructure.DBContext
         public DbSet<Domain.EmployeeTerritorie> EmployeeTerritories { get; set; }
         public DbSet<Territorie> Territorie { get; set; }
         public DbSet<Domain.Region> Regions { get; set; }
+        public DbSet<Domain.Product> Product { get; set; }
         public DbSet<Domain.Categories> Categories { get; set; }
         public DbSet<Domain.Supplier> Supplier { get; set; }
         public DbSet<Customer> Customers { get; set; }

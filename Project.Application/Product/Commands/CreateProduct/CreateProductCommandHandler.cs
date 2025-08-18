@@ -3,7 +3,7 @@ using MediatR;
 using Project.Application.Common.Interfaces;
 using Project.Application.Mapping.Product;
 
-namespace Project.Application.Product.Commands
+namespace Project.Application.Product.Commands.CreateProduct
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ErrorOr<Domain.Product>>
     {
@@ -33,11 +33,14 @@ namespace Project.Application.Product.Commands
                 if (ifprobisempty)
                     return Error.Validation("Validation Type Error", "Fields should'nt be Empty");
 
-                if(!await _catecoryRepository.FindAsync(request.AddProductDto.CategoryID))
+                if (!await _catecoryRepository.FindAsync(request.AddProductDto.CategoryID) && request.AddProductDto.CategoryID is not null)
                     return Error.NotFound("Validation Type Error", "CategoryID does not exist");
 
-                if(!await _suppliersRepository.FindAsync(request.AddProductDto.SupplierID))
+                if (!await _suppliersRepository.FindAsync(request.AddProductDto.SupplierID) && request.AddProductDto.SupplierID is not null)
                     return Error.NotFound("Validation Type Error", "SupplierID does not exist");
+
+                if (request.AddProductDto.UnitPrice is not null && request.AddProductDto.UnitPrice < 0)
+                    return Error.Validation("Validation Type Error", "UnitPrice should be greater than or equal to 0");
 
                 var id = await _productRepository.GetMaxId();
 

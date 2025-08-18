@@ -19,9 +19,23 @@ namespace Project.Infrastructure.Products.Persistence
             await _context.SaveChangesAsync();
         }
 
+        public async Task DeleteProductAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> FindAsync(int productid)
+        {
+            return await _context.viewProductDatas
+                .AsNoTracking()
+                .AnyAsync(p => p.ProductID == productid && !p.IsDeleted);
+        }
+
         public async Task<List<Domain.ViewClasses.ViewProductData>> GetAllProductsAsync()
         {
-            return await _context.viewProductDatas.ToListAsync();
+            return await _context.viewProductDatas
+                .Where(p => !p.IsDeleted)
+                .ToListAsync();
         }
 
         public async Task<int> GetMaxId()
@@ -30,10 +44,17 @@ namespace Project.Infrastructure.Products.Persistence
                 .AnyAsync() ? await _context.viewProductDatas.MaxAsync(p => p.ProductID) : 0;
         }
 
+        public async Task<Product> GetProduct(int? id)
+        {
+            return await _context.Product
+                .Where(p => !p.IsDeleted)
+                .SingleOrDefaultAsync(p => p.ProductID == id);
+        }
+
         public async Task<List<Domain.ViewClasses.ViewProductData>> GetProductByGuidAsync(int id)
         {
             return await _context.viewProductDatas
-                .Where(p => p.ProductID == id)
+                .Where(p => p.ProductID == id && !p.IsDeleted)
                 .ToListAsync();
         }
     }

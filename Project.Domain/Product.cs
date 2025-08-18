@@ -11,6 +11,8 @@ namespace Project.Domain
         public Supplier supplier { get; set; }
         public int? CategoryID { get; set; }
         public Categories category { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public DateTime? DeletedOn { get; set; }
         [MaxLength(20)]
         public string? QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; } // has default value of 0

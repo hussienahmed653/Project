@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.DTOs;
-using Project.Application.Product.Commands;
+using Project.Application.Product.Commands.CreateProduct;
+using Project.Application.Product.Commands.DeleteProduct;
 using Project.Application.Product.Queries.GetProduct;
 
 namespace Project.Api.Controller
@@ -34,6 +35,12 @@ namespace Project.Api.Controller
         public async Task<IActionResult> GetSingleProductsAsync(int id)
         {
             var result = await _mediator.Send(new GetProductQueries(id));
+            return ProblemOr(result);
+        }
+        [HttpDelete("DeleteProduct")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var result = await _mediator.Send(new DeleteProductCommand(id));
             return ProblemOr(result);
         }
     }
