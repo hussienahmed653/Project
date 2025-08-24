@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Project.Application.DTOs;
 using Project.Domain;
+using Project.Domain.Authentication;
 using System.Reflection;
 
 namespace Project.Infrastructure.DBContext
@@ -29,5 +30,6 @@ namespace Project.Infrastructure.DBContext
         public DbSet<FilePath> FilePaths { get; set; }
         public DbSet<Domain.ViewClasses.ViewEmployeeData> viewEmployeeDatas { get; set; }
         public DbSet<Domain.ViewClasses.ViewProductData> viewProductDatas { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

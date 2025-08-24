@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Project.Application.Common.Interfaces;
+using Project.Domain.Common.Interfaces;
+using Project.Infrastructure.Authentication.PasswordHasher;
+using Project.Infrastructure.Authentication.TokenGenerator;
 using Project.Infrastructure.Categories.Persistence;
 using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
@@ -11,6 +14,7 @@ using Project.Infrastructure.Products.Persistence;
 using Project.Infrastructure.Supplier.Persistence;
 using Project.Infrastructure.Territories.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
+using Project.Infrastructure.Users.Persistence;
 
 namespace Project.Infrastructure
 {
@@ -29,7 +33,14 @@ namespace Project.Infrastructure
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICatecoryRepository, CatecoryRepository>();
             services.AddScoped<ISuppliersRepository, SuppliersRepository>();
-            
+            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
+
+            services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.jwtsettings));
+            //services.AddOptions<JwtSettings>()
+            //    .Bind(configuration.GetSection("JWT"))
+            //    .ValidateOnStart();
             return services;
         }
     }

@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Project.Api.Controller.AuthenticationsController",
+    "Method": "Login",
+    "RelativePath": "api/Authentications/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "Project.Application.Authentication.Dtos.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.AuthenticationsController",
+    "Method": "Register",
+    "RelativePath": "api/Authentications/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRequest",
+        "Type": "Project.Application.Authentication.Dtos.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Project.Api.Controller.EmployeesController",
     "Method": "AddEmployee",
     "RelativePath": "api/Employees/AddEmployee",
