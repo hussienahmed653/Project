@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.Application.DTOs;
 using Project.Application.Employee.Commands.AddTerritoryToEmployee;
@@ -45,7 +46,7 @@ namespace Project.Api.Controller
                 var result = await _mediator.Send(new RemoveTerritoryFromEmployeeCommand(EmployeeGuid, TerritoryId));
                 return ProblemOr(result);
         }
-
+        [Authorize]
         [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
