@@ -13,10 +13,6 @@ builder.Services.AddSwaggerWithAuth();
 builder.Services
     .AddApplicationServices()
     .AddInfrastructure(builder.Configuration);
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

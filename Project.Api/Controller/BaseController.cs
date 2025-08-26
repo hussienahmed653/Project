@@ -17,6 +17,8 @@ namespace Project.Api.Controller
                 return NoContent();
             if(result.Value is Created)
                 return Created("Created","Territory Added To Employee");
+            if (result.Value is Updated)
+                return NoContent();
 
 
             return Ok(result.Value);

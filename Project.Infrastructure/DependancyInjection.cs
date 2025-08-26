@@ -19,6 +19,7 @@ using Project.Infrastructure.Territories.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
 using Project.Infrastructure.Users.Persistence;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Project.Infrastructure
 {
@@ -77,6 +78,11 @@ namespace Project.Infrastructure
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtsetting.Key)),
                     };
                 });
+
+            services.AddControllers().AddJsonOptions(opiton =>
+            {
+                opiton.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            });
                     
             return services;
         }

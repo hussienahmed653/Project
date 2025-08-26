@@ -21,7 +21,7 @@ namespace Project.Infrastructure.Authentication.PasswordHasher
         }
 
 
-        [GeneratedRegex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]
+        [GeneratedRegex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])\\S{8,}$")]
         private static partial Regex StrongPasswordRegex();
     }
 }

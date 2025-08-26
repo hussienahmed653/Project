@@ -1,0 +1,39 @@
+﻿using ErrorOr;
+using MediatR;
+using Project.Application.Common.Interfaces;
+
+namespace Project.Application.Authentication.Command.UpdateUserRole
+{
+    public class UpdateUserRoleCommandHandler : IRequestHandler<UpdateUserRoleCommand, ErrorOr<Updated>>
+    {
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
+
+        public UpdateUserRoleCommandHandler(IUnitOfWork unitOfWork,
+                                            IUserRepository userRepository)
+        {
+            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
+        }
+
+        public async Task<ErrorOr<Updated>> Handle(UpdateUserRoleCommand request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                if (!await _userRepository.ExistByEmail(request.email))
+                    return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
+                var user = await _userRepository.GetUserByEmail(request.email);
+                user.Role = request.Roles;
+                await _userRepository.Update(user);
+                await _unitOfWork.CommitAsync();
+                return Result.Updated;
+            }
+            catch
+            {
+                await _unitOfWork.RollbackAsync();
+                return Error.Failure("");
+            }
+        }
+    }
+}

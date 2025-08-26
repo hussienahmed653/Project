@@ -16,6 +16,7 @@ namespace Project.Api.Controller
     public class EmployeesController : BaseController
     {
         IMediator _mediator;
+        
 
         public EmployeesController(IMediator mediator)
         {

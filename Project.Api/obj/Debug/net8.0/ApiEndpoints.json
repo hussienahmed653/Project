@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Project.Api.Controller.AuthenticationsController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Authentications/ChangePassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordRequest",
+        "Type": "Project.Application.Authentication.Dtos.ChangePasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.AuthenticationsController",
     "Method": "Login",
     "RelativePath": "api/Authentications/Login",
     "HttpMethod": "POST",
@@ -27,6 +43,27 @@
         "Name": "registerRequest",
         "Type": "Project.Application.Authentication.Dtos.RegisterRequest",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Project.Api.Controller.AuthenticationsController",
+    "Method": "UpdateUserRole",
+    "RelativePath": "api/Authentications/UpdateUserRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "roles",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

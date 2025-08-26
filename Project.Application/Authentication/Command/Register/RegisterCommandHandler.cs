@@ -5,7 +5,7 @@ using Project.Application.Common.Interfaces;
 using Project.Application.Mapping.Authentications;
 using Project.Domain.Common.Interfaces;
 
-namespace Project.Application.Authentication.Command
+namespace Project.Application.Authentication.Command.Register
 {
     public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthReseult>>
     {

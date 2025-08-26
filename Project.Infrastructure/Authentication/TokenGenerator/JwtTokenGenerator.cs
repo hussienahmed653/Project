@@ -39,7 +39,7 @@ namespace Project.Infrastructure.Authentication.TokenGenerator
                 new Claim(JwtRegisteredClaimNames.Name, user.FirstName),
                 new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role.ToString()),
+                new Claim(ClaimTypes.Role, ((int)user.Role).ToString()),
             };
 
             var token = new JwtSecurityToken

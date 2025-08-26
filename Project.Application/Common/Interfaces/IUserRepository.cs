@@ -6,6 +6,7 @@ namespace Project.Application.Common.Interfaces
     {
         Task<bool> ExistByEmail(string Email);
         Task Add(User user);
+        Task Update(User user);
         Task<User> GetUserByEmail(string Email); 
     }
 }

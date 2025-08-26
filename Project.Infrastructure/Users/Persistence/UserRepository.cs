@@ -34,5 +34,10 @@ namespace Project.Infrastructure.Users.Persistence
                 .SingleOrDefaultAsync(u => u.Email == Email);
 
         }
+
+        public async Task Update(User user)
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }
