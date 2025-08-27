@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.Infrastructure.DBContext;
 
@@ -11,9 +12,11 @@ using Project.Infrastructure.DBContext;
 namespace Project.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250827111628_AddUserPasswordHistoryTable")]
+    partial class AddUserPasswordHistoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,7 +64,7 @@ namespace Project.Infrastructure.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Project.Domain.Categories", b =>
@@ -85,7 +88,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Project.Domain.Customer", b =>
@@ -136,7 +139,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Project.Domain.CustomerCustomerDemo", b =>
@@ -151,7 +154,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("CustomerTypeID");
 
-                    b.ToTable("CustomerCustomerDemo", (string)null);
+                    b.ToTable("CustomerCustomerDemo");
                 });
 
             modelBuilder.Entity("Project.Domain.CustomerDemographics", b =>
@@ -165,7 +168,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("CustomerTypeID");
 
-                    b.ToTable("CustomerDemographics", (string)null);
+                    b.ToTable("CustomerDemographics");
                 });
 
             modelBuilder.Entity("Project.Domain.Employee", b =>
@@ -244,7 +247,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("ReportsTo");
 
-                    b.ToTable("Employees", (string)null);
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("Project.Domain.EmployeeTerritorie", b =>
@@ -272,7 +275,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("EntityGuid", "Path");
 
-                    b.ToTable("FilePaths", (string)null);
+                    b.ToTable("FilePaths");
                 });
 
             modelBuilder.Entity("Project.Domain.Order", b =>
@@ -357,7 +360,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("OrderDetails", (string)null);
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("Project.Domain.Product", b =>
@@ -417,7 +420,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("SupplierID");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Project.Domain.Region", b =>
@@ -432,7 +435,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("RegionID");
 
-                    b.ToTable("Regions", (string)null);
+                    b.ToTable("Regions");
                 });
 
             modelBuilder.Entity("Project.Domain.Shipper", b =>
@@ -451,7 +454,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("ShipperID");
 
-                    b.ToTable("Shippers", (string)null);
+                    b.ToTable("Shippers");
                 });
 
             modelBuilder.Entity("Project.Domain.Supplier", b =>
@@ -526,7 +529,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasIndex("RegionID");
 
-                    b.ToTable("Territorie", (string)null);
+                    b.ToTable("Territorie");
                 });
 
             modelBuilder.Entity("Project.Domain.TrigerUpdateUserTable.UserPasswordHistory", b =>
@@ -539,7 +542,7 @@ namespace Project.Infrastructure.Migrations
 
                     b.HasKey("UserGuid", "OldPassword");
 
-                    b.ToTable("userPasswordHistories", (string)null);
+                    b.ToTable("userPasswordHistories");
                 });
 
             modelBuilder.Entity("Project.Domain.ViewClasses.ViewEmployeeData", b =>

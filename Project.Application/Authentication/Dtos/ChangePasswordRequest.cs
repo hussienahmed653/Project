@@ -1,4 +1,5 @@
-﻿using ErrorOr;
+﻿using BCrypt.Net;
+using ErrorOr;
 
 namespace Project.Application.Authentication.Dtos
 {
@@ -16,6 +17,23 @@ namespace Project.Application.Authentication.Dtos
                 return Error.Conflict(description: ".كلمة المرور الجديدة غير متطابقة");
 
             return Result.Success;
+        }
+
+        public static ErrorOr<Success> CurrentPasswordIsEqualsNewPassword(string currentpassword, string newpassword)
+        {
+            if(currentpassword == newpassword)
+                return Error.Conflict(description: "كلمة المرور الجديدة يجب ان تكون مختلفة عن الحالية");
+            return Result.Success;
+        }
+
+        public static bool CanUseThisPassword(string newpassword, List<string> oldpasswordhasher)
+        {
+            foreach(var oldhash in oldpasswordhasher)
+            {
+                if(BCrypt.Net.BCrypt.EnhancedVerify(newpassword, oldhash))
+                    return false;
+            }
+            return true;
         }
     }
 }

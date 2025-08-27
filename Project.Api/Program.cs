@@ -1,3 +1,4 @@
+using BCrypt.Net;
 using Project.Application;
 using Project.Infrastructure;
 using System.Text.Json.Serialization;
@@ -14,7 +15,6 @@ builder.Services
     .AddApplicationServices()
     .AddInfrastructure(builder.Configuration);
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -17,6 +17,7 @@ using Project.Infrastructure.Products.Persistence;
 using Project.Infrastructure.Supplier.Persistence;
 using Project.Infrastructure.Territories.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
+using Project.Infrastructure.UserPasswordHistory;
 using Project.Infrastructure.Users.Persistence;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -47,6 +48,7 @@ namespace Project.Infrastructure
             services.AddScoped<ICatecoryRepository, CatecoryRepository>();
             services.AddScoped<ISuppliersRepository, SuppliersRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserPasswordHistorieRepository, UserPasswordHistorieRepository>();
             return services;
         }
 

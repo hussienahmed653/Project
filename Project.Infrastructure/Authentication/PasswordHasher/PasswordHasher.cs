@@ -1,4 +1,5 @@
-﻿using ErrorOr;
+﻿using BCrypt.Net;
+using ErrorOr;
 using Project.Domain.Common.Interfaces;
 using System.Text.RegularExpressions;
 
@@ -11,7 +12,7 @@ namespace Project.Infrastructure.Authentication.PasswordHasher
         public ErrorOr<string> HashPassword(string password)
         {
             return StrongPassword.IsMatch(password) 
-                ? BCrypt.Net.BCrypt.EnhancedHashPassword(password) 
+                ? BCrypt.Net.BCrypt.EnhancedHashPassword(password)
                 : Error.Validation(description: "Password is too weak!");
         }
 

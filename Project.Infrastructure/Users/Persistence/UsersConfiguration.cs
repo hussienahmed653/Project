@@ -25,6 +25,8 @@ namespace Project.Infrastructure.Users.Persistence
 
             builder.Property(u => u.CreatedOn)
                 .HasDefaultValueSql("GETDATE()");
+
+            builder.ToTable(u => u.HasTrigger("user_Password_Histories"));
         }
     }
 }
