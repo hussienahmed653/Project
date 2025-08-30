@@ -1,13 +1,13 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Authentication.Common;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.Mapping.Authentications;
 using Project.Domain.Common.Interfaces;
 
 namespace Project.Application.Authentication.Queries
 {
-    public class LoginQuerieHandler : IRequestHandler<LoginQuerie, ErrorOr<AuthReseult>>
+    public class LoginQuerieHandler : IRequestHandlerRepository<LoginQuerie, ErrorOr<AuthReseult>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPasswordHasher _passwordHasher;
@@ -25,7 +25,7 @@ namespace Project.Application.Authentication.Queries
             _jwtTokenGenerator = jwtTokenGenerator;
         }
 
-        public async Task<ErrorOr<AuthReseult>> Handle(LoginQuerie request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<AuthReseult>> Handle(LoginQuerie request)
         {
             try
             {

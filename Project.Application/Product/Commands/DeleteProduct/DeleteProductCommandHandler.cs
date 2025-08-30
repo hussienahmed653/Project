@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Product.Commands.DeleteProduct
 {
-    public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand, ErrorOr<Deleted>>
+    public class DeleteProductCommandHandler : IRequestHandlerRepository<DeleteProductCommand, ErrorOr<Deleted>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
@@ -16,7 +16,7 @@ namespace Project.Application.Product.Commands.DeleteProduct
             _productRepository = productRepository;
         }
 
-        public async Task<ErrorOr<Deleted>> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Deleted>> Handle(DeleteProductCommand request)
         {
             try
             {

@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Authentication.Dtos;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Domain.Common.Interfaces;
 
 namespace Project.Application.Authentication.Command.ChangePassword
 {
-    public class ChangePasswordCommandHandler : IRequestHandler<ChangePasswordCommand, ErrorOr<Updated>>
+    public class ChangePasswordCommandHandler : IRequestHandlerRepository<ChangePasswordCommand, ErrorOr<Updated>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
@@ -24,7 +24,7 @@ namespace Project.Application.Authentication.Command.ChangePassword
             _passwordHistorieRepository = passwordHistorieRepository;
         }
 
-        public async Task<ErrorOr<Updated>> Handle(ChangePasswordCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Updated>> Handle(ChangePasswordCommand request)
         {
             try
             {

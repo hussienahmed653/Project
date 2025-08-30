@@ -1,11 +1,11 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Domain;
 
 namespace Project.Application.EntityFilePaths.Commands.CreateEntityFile
 {
-    public class CreateEntityFileCommandHandler : IRequestHandler<CreateEntityFilePathCommand, ErrorOr<string>>
+    public class CreateEntityFileCommandHandler : IRequestHandlerRepository<CreateEntityFilePathCommand, ErrorOr<string>>
     {
         private readonly IEntityFileRepository _entityFileRepository;
         private readonly IEmployeeRepository _employeeRepository;
@@ -20,7 +20,7 @@ namespace Project.Application.EntityFilePaths.Commands.CreateEntityFile
             _employeeRepository = employeeRepository;
         }
 
-        public async Task<ErrorOr<string>> Handle(CreateEntityFilePathCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<string>> Handle(CreateEntityFilePathCommand request)
         {
             try
             {
@@ -40,7 +40,6 @@ namespace Project.Application.EntityFilePaths.Commands.CreateEntityFile
                 await _unitOfWork.RollbackAsync();
                 return Error.Failure("FileUploadError", "An error occurred while uploading the file.");
             }
-
         }
     }
 }

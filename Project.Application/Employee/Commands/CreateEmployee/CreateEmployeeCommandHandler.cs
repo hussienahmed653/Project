@@ -1,12 +1,11 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.Mapping.Employee;
-using Project.Domain;
 
 namespace Project.Application.Employee.Commands.CreateEmployee
 {
-    public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, ErrorOr<Domain.Employee>>
+    public class CreateEmployeeCommandHandler : IRequestHandlerRepository<CreateEmployeeCommand, ErrorOr<Domain.Employee>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _genericUploadeEntityFile;
@@ -21,23 +20,22 @@ namespace Project.Application.Employee.Commands.CreateEmployee
             _genericUploadeEntityFile = genericUploadeEntityFile;
             _unitOfWork = unitOfWork;
         }
-
-        public async Task<ErrorOr<Domain.Employee>> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Domain.Employee>> Handle(CreateEmployeeCommand request)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
                 var ifprobisempty = await _unitOfWork.IfProbIsEmpty(request.EmployeeDTO);
-                if(ifprobisempty)
+                if (ifprobisempty)
                     return Error.Validation("Validation Type Error", "Fields should'nt be Empty");
 
                 var id = _employeeRepository.GetMaxId();
 
-                if(request.EmployeeDTO.HireDate > DateTime.Now || request.EmployeeDTO.BirthDate > DateTime.Now)
-                    return Error.Validation(code : "Validation Type Error", "Hire and Birth date cannot be in the future.");
-                if(request.EmployeeDTO.Extension is not null && !_allowedExtensions.Contains(request.EmployeeDTO.Extension))
+                if (request.EmployeeDTO.HireDate > DateTime.Now || request.EmployeeDTO.BirthDate > DateTime.Now)
+                    return Error.Validation(code: "Validation Type Error", "Hire and Birth date cannot be in the future.");
+                if (request.EmployeeDTO.Extension is not null && !_allowedExtensions.Contains(request.EmployeeDTO.Extension))
                     return Error.Validation("Validation Type Error", "Extension is not allowed. , It must be { " + $"{string.Join(", ", _allowedExtensions)}" + " }");
-                if (request.EmployeeDTO is { ReportsTo: <= 0} || request.EmployeeDTO.ReportsTo > id)
+                if (request.EmployeeDTO is { ReportsTo: <= 0 } || request.EmployeeDTO.ReportsTo > id)
                     return Error.Validation("Validation Type Error", "ReportsTo must reference an existing Employee ID.");
 
                 var employeemapper = request.EmployeeDTO.AddEmployeeMapper();
@@ -50,7 +48,7 @@ namespace Project.Application.Employee.Commands.CreateEmployee
                 return employeemapper;
             }
             catch
-            { 
+            {
                 await _unitOfWork.RollbackAsync();
                 return Error.Failure("CreateEmployeeError");
             }

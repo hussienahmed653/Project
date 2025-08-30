@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
 using Mapster;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 
 namespace Project.Application.Employee.Commands.UpdateEmployee
 {
-    public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand, ErrorOr<EmployeeResponseDto>>
+    public class UpdateEmployeeCommandHandler : IRequestHandlerRepository<UpdateEmployeeCommand, ErrorOr<EmployeeResponseDto>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _genericUploadeEntityFile;
@@ -20,7 +20,7 @@ namespace Project.Application.Employee.Commands.UpdateEmployee
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ErrorOr<EmployeeResponseDto>> Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<EmployeeResponseDto>> Handle(UpdateEmployeeCommand request)
         {
             try
             {

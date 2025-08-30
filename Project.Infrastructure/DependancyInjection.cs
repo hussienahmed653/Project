@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Domain.Common.Interfaces;
 using Project.Infrastructure.Authentication.PasswordHasher;
 using Project.Infrastructure.Authentication.TokenGenerator;
@@ -13,6 +14,7 @@ using Project.Infrastructure.DBContext;
 using Project.Infrastructure.Employee.Persistence;
 using Project.Infrastructure.EmployeeTerritorie.Persistence;
 using Project.Infrastructure.FilePaths.Persistence;
+using Project.Infrastructure.Mediator;
 using Project.Infrastructure.Products.Persistence;
 using Project.Infrastructure.Supplier.Persistence;
 using Project.Infrastructure.Territories.Persistence;
@@ -49,6 +51,7 @@ namespace Project.Infrastructure
             services.AddScoped<ISuppliersRepository, SuppliersRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserPasswordHistorieRepository, UserPasswordHistorieRepository>();
+            services.AddScoped<IMediatorRepository, MediatorRepository>();
             return services;
         }
 

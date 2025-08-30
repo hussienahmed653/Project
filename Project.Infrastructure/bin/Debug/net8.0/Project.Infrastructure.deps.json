@@ -12,7 +12,6 @@
           "ErrorOr": "2.0.1",
           "Fare": "2.2.1",
           "Mapster": "7.4.0",
-          "MediatR": "13.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.7",
@@ -121,28 +120,6 @@
           "lib/net7.0/Mapster.Core.dll": {
             "assemblyVersion": "1.2.1.0",
             "fileVersion": "1.2.1.0"
-          }
-        }
-      },
-      "MediatR/13.0.0": {
-        "dependencies": {
-          "MediatR.Contracts": "2.0.1",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
-          "Microsoft.Extensions.Logging": "9.0.7",
-          "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
-        },
-        "runtime": {
-          "lib/net8.0/MediatR.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.0.0"
-          }
-        }
-      },
-      "MediatR.Contracts/2.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {
-            "assemblyVersion": "2.0.1.0",
-            "fileVersion": "2.0.1.0"
           }
         }
       },
@@ -988,6 +965,18 @@
           }
         }
       },
+      "Scrutor/6.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.8",
+          "Microsoft.Extensions.DependencyModel": "9.0.7"
+        },
+        "runtime": {
+          "lib/net8.0/Scrutor.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/9.0.3": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "8.0.0",
@@ -1406,7 +1395,6 @@
           "ErrorOr": "2.0.1",
           "Fare": "2.2.1",
           "Mapster": "7.4.0",
-          "MediatR": "13.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.EntityFrameworkCore": "9.0.7",
@@ -1417,6 +1405,7 @@
           "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.8",
           "Microsoft.TestPlatform.ObjectModel": "17.14.1",
           "Project.Domain": "1.0.0",
+          "Scrutor": "6.1.0",
           "System.IdentityModel.Tokens.Jwt": "8.14.0",
           "System.Security.Claims": "4.3.0"
         },
@@ -1433,7 +1422,6 @@
           "ErrorOr": "2.0.1",
           "Fare": "2.2.1",
           "Mapster": "7.4.0",
-          "MediatR": "13.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.7",
@@ -1521,20 +1509,6 @@
       "sha512": "sha512-11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
       "path": "mapster.core/1.2.1",
       "hashPath": "mapster.core.1.2.1.nupkg.sha512"
-    },
-    "MediatR/13.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gR5vSoIINsXs86we38qdIfG62f6ngxT2sSaePsakJGHJIgLUDA7b41lujGXGWxX0hWyk8suajr2VKcAYSVMtdw==",
-      "path": "mediatr/13.0.0",
-      "hashPath": "mediatr.13.0.0.nupkg.sha512"
-    },
-    "MediatR.Contracts/2.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
-      "path": "mediatr.contracts/2.0.1",
-      "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
       "type": "package",
@@ -1878,6 +1852,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "Scrutor/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m4+0RdgnX+jeiaqteq9x5SwEtuCjWG0KTw1jBjCzn7V8mCanXKoeF8+59E0fcoRbAjdEq6YqHFCmxZ49Kvqp3g==",
+      "path": "scrutor/6.1.0",
+      "hashPath": "scrutor.6.1.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/9.0.3": {
       "type": "package",

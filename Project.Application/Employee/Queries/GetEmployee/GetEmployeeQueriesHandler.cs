@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 using Project.Application.Mapping.Employee;
 
 namespace Project.Application.Employee.Queries.GetEmployee
 {
-    public class GetEmployeeQueriesHandler : IRequestHandler<GetEmployeeQueries, ErrorOr<List<EmployeeResponseDto>>>
+    public class GetEmployeeQueriesHandler : IRequestHandlerRepository<GetEmployeeQueries, ErrorOr<List<EmployeeResponseDto>>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEntityFileRepository _entityFileRepository;
@@ -21,7 +21,7 @@ namespace Project.Application.Employee.Queries.GetEmployee
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ErrorOr<List<EmployeeResponseDto>>> Handle(GetEmployeeQueries request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<List<EmployeeResponseDto>>> Handle(GetEmployeeQueries request)
         {
             try
             {

@@ -229,8 +229,6 @@ C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\ErrorOr.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Humanizer.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Mapster.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Mapster.Core.dll
-C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\MediatR.dll
-C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\MediatR.Contracts.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -434,3 +432,4 @@ C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.Exten
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Fare.dll
+C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Scrutor.dll

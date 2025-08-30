@@ -1,11 +1,11 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.Mapping.Product;
 
 namespace Project.Application.Product.Commands.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ErrorOr<Domain.Product>>
+    public class CreateProductCommandHandler : IRequestHandlerRepository<CreateProductCommand, ErrorOr<Domain.Product>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
@@ -23,7 +23,7 @@ namespace Project.Application.Product.Commands.CreateProduct
             _suppliersRepository = suppliersRepository;
         }
 
-        public async Task<ErrorOr<Domain.Product>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Domain.Product>> Handle(CreateProductCommand request)
         {
             try
             {

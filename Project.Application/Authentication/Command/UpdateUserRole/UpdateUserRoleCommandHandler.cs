@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Authentication.Command.UpdateUserRole
 {
-    public class UpdateUserRoleCommandHandler : IRequestHandler<UpdateUserRoleCommand, ErrorOr<Updated>>
+    public class UpdateUserRoleCommandHandler : IRequestHandlerRepository<UpdateUserRoleCommand, ErrorOr<Updated>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IUserRepository _userRepository;
@@ -16,7 +16,7 @@ namespace Project.Application.Authentication.Command.UpdateUserRole
             _userRepository = userRepository;
         }
 
-        public async Task<ErrorOr<Updated>> Handle(UpdateUserRoleCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Updated>> Handle(UpdateUserRoleCommand request)
         {
             try
             {

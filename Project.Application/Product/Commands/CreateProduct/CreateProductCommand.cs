@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 
 namespace Project.Application.Product.Commands.CreateProduct
 {
-    public record CreateProductCommand(AddProductDto AddProductDto) : IRequest<ErrorOr<Domain.Product>>;
+    public record CreateProductCommand(AddProductDto AddProductDto) : IRequestRepository<ErrorOr<Domain.Product>>;
 }

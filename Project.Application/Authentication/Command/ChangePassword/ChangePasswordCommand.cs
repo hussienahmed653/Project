@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Authentication.Dtos;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Authentication.Command.ChangePassword
 {
-    public record ChangePasswordCommand(ChangePasswordRequest ChangePasswordRequest) : IRequest<ErrorOr<Updated>>;
+    public record ChangePasswordCommand(ChangePasswordRequest ChangePasswordRequest) : IRequestRepository<ErrorOr<Updated>>;
 }

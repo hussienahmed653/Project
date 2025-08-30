@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Employee.Commands.AddTerritoryToEmployee
 {
-    public class AddTerritoryToEmployeeCommandHandler : IRequestHandler<AddTerritoryToEmployeeCommand, ErrorOr<Created>>
+    public class AddTerritoryToEmployeeCommandHandler : IRequestHandlerRepository<AddTerritoryToEmployeeCommand, ErrorOr<Created>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEmployeeTerritorieRepository _EmployeeterritoryRepository;
@@ -22,7 +22,7 @@ namespace Project.Application.Employee.Commands.AddTerritoryToEmployee
             _territoryRepository = territoryRepository;
         }
 
-        public async Task<ErrorOr<Created>> Handle(AddTerritoryToEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Created>> Handle(AddTerritoryToEmployeeCommand request)
         {
             try
             {
@@ -34,10 +34,10 @@ namespace Project.Application.Employee.Commands.AddTerritoryToEmployee
 
                 var employee = await _employeeRepository.GetTableViewEmployeeByGuIdAsync(request.Guid);
 
-                if(!await _territoryRepository.ExistAsync(request.id))
+                if (!await _territoryRepository.ExistAsync(request.id))
                     return Error.NotFound("NotFound", "There is no Territory with this id");
 
-                if (await _EmployeeterritoryRepository.ExistAsync(request.id , employee.Select(e => e.EmployeeID).FirstOrDefault()))
+                if (await _EmployeeterritoryRepository.ExistAsync(request.id, employee.Select(e => e.EmployeeID).FirstOrDefault()))
                     return Error.Unexpected("UnexpectedError", "The employee is assigned to the specified territory.");
 
                 var employeeterritoy = new Domain.EmployeeTerritorie

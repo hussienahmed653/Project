@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 
 namespace Project.Application.Employee.Queries.GetEmployee
 {
-    public record GetEmployeeQueries(Guid? Guid) : IRequest<ErrorOr<List<EmployeeResponseDto>>>;
+    public record GetEmployeeQueries(Guid? Guid) : IRequestRepository<ErrorOr<List<EmployeeResponseDto>>>;
 }

@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 using Project.Application.Mapping.Product;
 
 namespace Project.Application.Product.Queries.GetProduct
 {
-    public class GetProductQueriesHandler : IRequestHandler<GetProductQueries, ErrorOr<List<ProductResponseDto>>>
+    public class GetProductQueriesHandler : IRequestHandlerRepository<GetProductQueries, ErrorOr<List<ProductResponseDto>>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
@@ -18,7 +18,7 @@ namespace Project.Application.Product.Queries.GetProduct
             _productRepository = productRepository;
         }
 
-        public async Task<ErrorOr<List<ProductResponseDto>>> Handle(GetProductQueries request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<List<ProductResponseDto>>> Handle(GetProductQueries request)
         {
             try
             {

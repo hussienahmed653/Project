@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Product.Commands.DeleteProduct
 {
-    public record DeleteProductCommand(int id) : IRequest<ErrorOr<Deleted>>;
+    public record DeleteProductCommand(int id) : IRequestRepository<ErrorOr<Deleted>>;
 }

@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 using Project.Application.Product.Commands.CreateProduct;
 using Project.Application.Product.Commands.DeleteProduct;
@@ -11,9 +11,9 @@ namespace Project.Api.Controller
     [ApiController]
     public class ProductsController : BaseController
     {
-        ISender _mediator;
+        IMediatorRepository _mediator;
 
-        public ProductsController(ISender mediator)
+        public ProductsController(IMediatorRepository mediator)
         {
             _mediator = mediator;
         }

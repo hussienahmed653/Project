@@ -1,6 +1,6 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 using Project.Application.Employee.Commands.AddTerritoryToEmployee;
 using Project.Application.Employee.Commands.CreateEmployee;
@@ -15,10 +15,10 @@ namespace Project.Api.Controller
     [ApiController]
     public class EmployeesController : BaseController
     {
-        IMediator _mediator;
+        IMediatorRepository _mediator;
         
 
-        public EmployeesController(IMediator mediator)
+        public EmployeesController(IMediatorRepository mediator)
         {
             _mediator = mediator;
         }
@@ -34,32 +34,32 @@ namespace Project.Api.Controller
             var result = await _mediator.Send(new AddTerritoryToEmployeeCommand(EmployeeGuid, TerritoryId));
             return ProblemOr(result);
         }
-        
+
         [HttpDelete("DeleteEmployee/{guid}")]
         public async Task<IActionResult> DeleteEmployee(Guid guid)
         {
-                var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
-                return ProblemOr(result);
+            var result = await _mediator.Send(new DeleteEmployeeCommand(guid));
+            return ProblemOr(result);
         }
         [HttpDelete("DeleteTerritoryFromEmployee")]
         public async Task<IActionResult> DeleteTerritoryFromEmployee(Guid EmployeeGuid, int TerritoryId)
         {
-                var result = await _mediator.Send(new RemoveTerritoryFromEmployeeCommand(EmployeeGuid, TerritoryId));
-                return ProblemOr(result);
+            var result = await _mediator.Send(new RemoveTerritoryFromEmployeeCommand(EmployeeGuid, TerritoryId));
+            return ProblemOr(result);
         }
         [Authorize]
         [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
-                var result = await _mediator.Send(new GetEmployeeQueries(null));
-                return ProblemOr(result);
+            var result = await _mediator.Send(new GetEmployeeQueries(null));
+            return ProblemOr(result);
         }
 
         [HttpGet("GetEmployeeByGuid/{guid}")]
         public async Task<IActionResult> GetEmployeeByGuid(Guid guid)
         {
-                var result = await _mediator.Send(new GetEmployeeQueries(guid));
-                return ProblemOr(result);
+            var result = await _mediator.Send(new GetEmployeeQueries(guid));
+            return ProblemOr(result);
         }
 
         [HttpPut("UpdateEmployee")]

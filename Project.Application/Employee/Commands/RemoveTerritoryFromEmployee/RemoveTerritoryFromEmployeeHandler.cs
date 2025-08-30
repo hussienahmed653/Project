@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Employee.Commands.RemoveTerritoryFromEmployee
 {
-    public class RemoveTerritoryFromEmployeeHandler : IRequestHandler<RemoveTerritoryFromEmployeeCommand, ErrorOr<Deleted>>
+    public class RemoveTerritoryFromEmployeeHandler : IRequestHandlerRepository<RemoveTerritoryFromEmployeeCommand, ErrorOr<Deleted>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IEmployeeTerritorieRepository _employeeTerritorieRepository;
@@ -22,17 +22,17 @@ namespace Project.Application.Employee.Commands.RemoveTerritoryFromEmployee
             _territorieRepository = territorieRepository;
         }
 
-        public async Task<ErrorOr<Deleted>> Handle(RemoveTerritoryFromEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Deleted>> Handle(RemoveTerritoryFromEmployeeCommand request)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if(!await _employeeRepository.ExistAsync(request.EmpGuid))
+                if (!await _employeeRepository.ExistAsync(request.EmpGuid))
                     return Error.NotFound("NotFound", "There is no Employee with this guid");
 
                 var employee = await _employeeRepository.GetTableEmployeesAsync(request.EmpGuid);
 
-                if(!await _territorieRepository.ExistAsync(request.TerId))
+                if (!await _territorieRepository.ExistAsync(request.TerId))
                     return Error.NotFound("NotFound", "There is no Territory with this id");
 
                 if (!await _employeeTerritorieRepository.ExistAsync(request.TerId, employee.EmployeeID))

@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Employee.Commands.RemoveTerritoryFromEmployee
 {
-    public record RemoveTerritoryFromEmployeeCommand(Guid EmpGuid, int TerId) : IRequest<ErrorOr<Deleted>>;
+    public record RemoveTerritoryFromEmployeeCommand(Guid EmpGuid, int TerId) : IRequestRepository<ErrorOr<Deleted>>;
 }

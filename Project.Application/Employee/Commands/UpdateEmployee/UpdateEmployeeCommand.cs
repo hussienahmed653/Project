@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.DTOs;
 
 namespace Project.Application.Employee.Commands.UpdateEmployee
 {
-    public record UpdateEmployeeCommand(UpdateEmployeeDto UpdateEmployeeDTO) : IRequest<ErrorOr<EmployeeResponseDto>>;
+    public record UpdateEmployeeCommand(UpdateEmployeeDto UpdateEmployeeDTO) : IRequestRepository<ErrorOr<EmployeeResponseDto>>;
 }

@@ -1,6 +1,5 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.EntityFilePaths.Commands.CreateEntityFile;
 using Project.Application.EntityFilePaths.Commands.DeleteEntityFile;
 
@@ -10,9 +9,9 @@ namespace Project.Api.Controller
     [ApiController]
     public class EntityFilePathsController : BaseController
     {
-        private readonly IMediator _mediator;
+        private readonly IMediatorRepository _mediator;
 
-        public EntityFilePathsController(IMediator mediator)
+        public EntityFilePathsController(IMediatorRepository mediator)
         {
             _mediator = mediator;
         }

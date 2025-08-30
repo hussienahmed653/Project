@@ -1,12 +1,11 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Project.Application.Authentication.Command;
 using Project.Application.Authentication.Command.ChangePassword;
 using Project.Application.Authentication.Command.Register;
 using Project.Application.Authentication.Command.UpdateUserRole;
 using Project.Application.Authentication.Dtos;
 using Project.Application.Authentication.Queries;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Domain.Authentication;
 
 namespace Project.Api.Controller
@@ -15,8 +14,8 @@ namespace Project.Api.Controller
     [ApiController]
     public class AuthenticationsController : BaseController
     {
-        private readonly ISender _mediator;
-        public AuthenticationsController(ISender mediator)
+        private readonly IMediatorRepository _mediator;
+        public AuthenticationsController(IMediatorRepository mediator)
         {
             _mediator = mediator;
         }

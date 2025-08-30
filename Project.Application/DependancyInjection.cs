@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Application.Common.MediatorInterfaces;
 using Project.Application.Employee.Commands.CreateEmployee;
 using System.Reflection;
 
@@ -9,11 +10,13 @@ namespace Project.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddMediatR(crf =>
+            services.Scan(scan =>
             {
-                crf.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+                scan.FromAssembliesOf(typeof(IRequestHandlerRepository<,>))
+                .AddClasses(classes => classes.AssignableTo(typeof(IRequestHandlerRepository<,>)))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime();
             });
-            TypeAdapterConfig.GlobalSettings.Scan(Assembly.GetExecutingAssembly());
             return services;
         }
     }

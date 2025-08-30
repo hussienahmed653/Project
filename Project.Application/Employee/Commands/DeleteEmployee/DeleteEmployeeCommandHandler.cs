@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using Project.Application.Common.Interfaces;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.Employee.Commands.DeleteEmployee
 {
-    public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand, ErrorOr<Deleted>>
+    public class DeleteEmployeeCommandHandler : IRequestHandlerRepository<DeleteEmployeeCommand, ErrorOr<Deleted>>
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IUnitOfWork _unitOfWork;
@@ -16,7 +16,7 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ErrorOr<Deleted>> Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Deleted>> Handle(DeleteEmployeeCommand request)
         {
             try
             {

@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
-using MediatR;
+using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.EntityFilePaths.Commands.DeleteEntityFile
 {
-    public record DeleteEntityFileCommand(Guid Guid) : IRequest<ErrorOr<bool>>;
+    public record DeleteEntityFileCommand(Guid Guid) : IRequestRepository<ErrorOr<bool>>;
 }
