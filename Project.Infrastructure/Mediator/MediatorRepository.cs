@@ -15,7 +15,7 @@ namespace Project.Infrastructure.Mediator
         {
             var handlertype = typeof(IRequestHandlerRepository<,>)
                 .MakeGenericType(request.GetType(), typeof(TResponse));
-             
+
             dynamic handler = _serviceProvider.GetService(handlertype)!;
             return await handler.Handle((dynamic)request);
         }

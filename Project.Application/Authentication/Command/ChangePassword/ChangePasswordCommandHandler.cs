@@ -2,6 +2,7 @@
 using Project.Application.Authentication.Dtos;
 using Project.Application.Common.Interfaces;
 using Project.Application.Common.MediatorInterfaces;
+using Project.Domain.Authentication;
 using Project.Domain.Common.Interfaces;
 
 namespace Project.Application.Authentication.Command.ChangePassword
@@ -37,12 +38,12 @@ namespace Project.Application.Authentication.Command.ChangePassword
                 if(!_passwordHasher.IsCorrectPassword(request.ChangePasswordRequest.CurrentPassword, user.PasswordHash))
                     return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
 
-                var differentpasswords = ChangePasswordRequest.CurrentPasswordIsEqualsNewPassword(request.ChangePasswordRequest.CurrentPassword, request.ChangePasswordRequest.NewPassword);
+                var differentpasswords = User.CurrentPasswordIsEqualsNewPassword(request.ChangePasswordRequest.CurrentPassword, request.ChangePasswordRequest.NewPassword);
 
                 if(differentpasswords.IsError)
                     return differentpasswords.Errors;
 
-                var passwordmatch = ChangePasswordRequest.PasswordNoMatched(request.ChangePasswordRequest.NewPassword, request.ChangePasswordRequest.ConfirmNewPassword);
+                var passwordmatch = User.PasswordNoMatched(request.ChangePasswordRequest.NewPassword, request.ChangePasswordRequest.ConfirmNewPassword);
                 if (passwordmatch.IsError)
                     return passwordmatch.Errors;
                 var newpasword = _passwordHasher.HashPassword(request.ChangePasswordRequest.NewPassword);
@@ -51,7 +52,7 @@ namespace Project.Application.Authentication.Command.ChangePassword
 
                 var oldhashers = await _passwordHistorieRepository.ExistByPasswordHash(user.Id);
 
-                if(!ChangePasswordRequest.CanUseThisPassword(request.ChangePasswordRequest.NewPassword, oldhashers))
+                if(!User.CanUseThisPassword(request.ChangePasswordRequest.NewPassword, oldhashers))
                     return Error.Conflict(description: ".لا يمكنك استخدام احدي كلمات المرور السابقة");
 
                 user.PasswordHash = newpasword.Value;
