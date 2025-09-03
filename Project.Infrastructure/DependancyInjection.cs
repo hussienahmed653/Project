@@ -41,6 +41,7 @@ namespace Project.Infrastructure
             var connectionstring = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(option =>
                                                         option.UseSqlServer(connectionstring));
+            services.AddSingleton<DapperDbContext>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEntityFileRepository, EntityFileRepository>();
             services.AddScoped<IUnitOfWork, UniteOfWorkRepository>();

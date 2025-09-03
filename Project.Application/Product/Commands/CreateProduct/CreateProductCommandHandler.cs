@@ -29,10 +29,6 @@ namespace Project.Application.Product.Commands.CreateProduct
             {
                 await _unitOfWork.BeginTransactionAsync();
 
-                var ifprobisempty = await _unitOfWork.IfProbIsEmpty(request.AddProductDto);
-                if (ifprobisempty)
-                    return Error.Validation("Validation Type Error", "Fields should'nt be Empty");
-
                 if (!await _catecoryRepository.FindAsync(request.AddProductDto.CategoryID) && request.AddProductDto.CategoryID is not null)
                     return Error.NotFound("Validation Type Error", "CategoryID does not exist");
 

@@ -1,4 +1,5 @@
-﻿using Project.Domain;
+﻿using Project.Application.DTOs;
+using Project.Domain;
 using Project.Domain.ViewClasses;
 
 namespace Project.Application.Common.Interfaces
@@ -10,8 +11,8 @@ namespace Project.Application.Common.Interfaces
         public Task<bool> ExistAsync(Guid guid);
         public Task<List<ViewEmployeeData>> GetAllTableViewEmployeesAsync();
         public Task<Domain.Employee> GetTableEmployeesAsync(Guid guid);
-        public Task AddEmployeeAsync(Domain.Employee employee);
-        public Task DeleteEmployeeAsync();
+        public Task<int> AddEmployeeAsync(AddEmployeeDto employee);
+        public Task DeleteEmployeeAsync(Guid guid);
         public Task UpdateEmployeeAsync(Domain.Employee employee);
     }
 }

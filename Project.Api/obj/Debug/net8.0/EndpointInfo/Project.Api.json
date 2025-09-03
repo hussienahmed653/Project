@@ -619,6 +619,14 @@
             "format": "int32",
             "nullable": true
           },
+          "employeeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeGuid": {
+            "type": "string",
+            "format": "uuid"
+          },
           "lastName": {
             "type": "string",
             "nullable": true

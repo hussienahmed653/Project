@@ -433,3 +433,4 @@ C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Microsoft.Exten
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Fare.dll
 C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Scrutor.dll
+C:\Users\hussi\Source\Repos\Project\Project.Api\bin\Debug\net8.0\Dapper.dll

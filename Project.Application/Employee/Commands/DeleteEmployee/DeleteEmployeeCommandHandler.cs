@@ -25,11 +25,11 @@ namespace Project.Application.Employee.Commands.DeleteEmployee
                 if (!await _employeeRepository.ExistAsync(request.Guid))
                     return Error.NotFound("NotFound", "There is no Employee with this guid");
 
-                var employee = await _employeeRepository.GetTableEmployeesAsync(request.Guid);
-                employee.IsDeleted = true;
-                employee.DeletedOn = DateTime.UtcNow;
+                //var employee = await _employeeRepository.GetTableEmployeesAsync(request.Guid);
+                //employee.IsDeleted = true;
+                //employee.DeletedOn = DateTime.UtcNow;
 
-                await _employeeRepository.DeleteEmployeeAsync();
+                await _employeeRepository.DeleteEmployeeAsync(request.Guid);
                 await _unitOfWork.CommitAsync();
                 return Result.Deleted;
             }

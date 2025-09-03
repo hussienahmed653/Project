@@ -1,52 +1,53 @@
-﻿using Microsoft.EntityFrameworkCore.Storage;
+﻿using Microsoft.Data.SqlClient;
 using Project.Application.Common.Interfaces;
 using Project.Infrastructure.DBContext;
-using System.Reflection.Metadata.Ecma335;
+using System.Data;
 
 namespace Project.Infrastructure.UniteOfWork.Persistence
 {
     internal class UniteOfWorkRepository : IUnitOfWork
     {
-        private readonly ApplicationDbContext _context;
-        private IDbContextTransaction? _transaction;
+        private readonly DapperDbContext _context;
+        IDbConnection? _connection;
+        private IDbTransaction? _transaction;
 
-        public UniteOfWorkRepository(ApplicationDbContext context)
+        public UniteOfWorkRepository(DapperDbContext context)
         {
             _context = context;
         }
 
         public async Task BeginTransactionAsync()
         {
-            if (_transaction == null)
-                _transaction = await _context.Database.BeginTransactionAsync();
+            //if (_transaction == null)
+            //    _transaction = await _context.Database.BeginTransactionAsync();
+            if(_transaction == null)
+            {
+                _connection = _context.CreateConnection();
+                await (_connection as SqlConnection)!.OpenAsync();
+                _transaction = _connection.BeginTransaction();
+            }
         }
 
-        public async Task CommitAsync()
+        public Task CommitAsync()
         {
             if (_transaction != null)
             {
-                await _transaction.CommitAsync();
-                await _transaction.DisposeAsync();
+                _transaction.Commit();
+                _transaction.Dispose();
                 _transaction = null;
             }
+            return Task.CompletedTask;
         }
 
-        public async Task<bool> IfProbIsEmpty(object obj)
-        {
-            return obj.GetType()
-                .GetProperties()
-                .Where(p => p.PropertyType == typeof(string))
-                .Any(p => p.GetValue(obj) is not null && p.GetValue(obj) == "");
-        }
-
-        public async Task RollbackAsync()
+        public Task RollbackAsync()
         {
             if(_transaction != null)
             {
-                await _transaction.RollbackAsync();
-                await _transaction.DisposeAsync();
+                _transaction.Rollback();
+                _transaction.Dispose();
                 _transaction = null;
             }
+            return Task.CompletedTask;
         }
     }
 }

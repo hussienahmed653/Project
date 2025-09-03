@@ -9,6 +9,8 @@ namespace Project.Application.Mapping.Employee
         public static Domain.Employee AddEmployeeMapper(this AddEmployeeDto addEmployeeDto)
         {
             var employee = new Domain.Employee();
+            employee.EmployeeID = addEmployeeDto.EmployeeID;
+            employee.EmployeeGuid = addEmployeeDto.EmployeeGuid;
             employee.LastName = addEmployeeDto.LastName;
             employee.FirstName = addEmployeeDto.FirstName;
             employee.Title = addEmployeeDto.Title;
