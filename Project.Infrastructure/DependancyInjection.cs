@@ -21,6 +21,7 @@ using Project.Infrastructure.Territories.Persistence;
 using Project.Infrastructure.UniteOfWork.Persistence;
 using Project.Infrastructure.UserPasswordHistory;
 using Project.Infrastructure.Users.Persistence;
+using System.Data;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -41,7 +42,9 @@ namespace Project.Infrastructure
             var connectionstring = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(option =>
                                                         option.UseSqlServer(connectionstring));
-            services.AddSingleton<DapperDbContext>();
+            services.AddScoped<DapperDbContext>();
+            //services.AddSingleton<IDbConnection>();
+            //services.AddSingleton<IDbTransaction>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEntityFileRepository, EntityFileRepository>();
             services.AddScoped<IUnitOfWork, UniteOfWorkRepository>();

@@ -2,8 +2,7 @@
 {
     public interface IEmployeeTerritorieRepository
     {
-        public Task<bool> ExistAsync(int terid, int empid);
-        public Task AddTerritoryToEmployee(int empid, Domain.EmployeeTerritorie entity);
-        public Task RemoveTerritoryFromEmployee(Domain.EmployeeTerritorie entity);
+        public Task<int> AddTerritoryToEmployee(Guid empguid, int terid);
+        public Task<int> RemoveTerritoryFromEmployee(Guid empguid, int terid);
     }
 }

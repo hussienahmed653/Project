@@ -1,43 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
 using Project.Infrastructure.DBContext;
+using System.Data;
 
 namespace Project.Infrastructure.EmployeeTerritorie.Persistence
 {
     internal class EmployeeTerritorieRepository : IEmployeeTerritorieRepository
     {
         private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public EmployeeTerritorieRepository(ApplicationDbContext context)
+        public EmployeeTerritorieRepository(ApplicationDbContext context,
+                    IUnitOfWork unitOfWork)
         {
             _context = context;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task AddTerritoryToEmployee(int empid, Domain.EmployeeTerritorie entity)
+        public async Task<int> AddTerritoryToEmployee(Guid empguid, int terid)
         {
-            var employeeterritory = await _context.Employees
-                .Include(e => e.EmployeeTerritories)
-                .FirstOrDefaultAsync(e => e.EmployeeID == empid);
-
-            employeeterritory.EmployeeTerritories.Add(entity);
-            await _context.SaveChangesAsync();
+            return await _unitOfWork.connection.QueryFirstOrDefaultAsync<int>("AddTerritoryToEmployee", new { empguid, terid }, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
         }
 
-        public async Task<bool> ExistAsync(int terid, int empid)
+        public async Task<int> RemoveTerritoryFromEmployee(Guid empguid, int terid)
         {
-            //return await _context.Employees
-            //    .Where(e => e.EmployeeTerritories.Any(et => et.TerritoryID != terid && et.EmployeeID != empid) 
-            //    && e.EmployeeTerritories.Any(t => t.territorie.TerritoryID == terid)).AnyAsync();
-
-            return await _context.EmployeeTerritories
-                .AnyAsync(et => et.TerritoryID == terid && et.EmployeeID == empid);
-
-        }
-
-        public async Task RemoveTerritoryFromEmployee(Domain.EmployeeTerritorie entity)
-        {
-            _context.EmployeeTerritories.Remove(entity);
-            await _context.SaveChangesAsync();
+            return await _unitOfWork.connection.QueryFirstOrDefaultAsync<int>("RemoveTerritoryFromEmployee", new { empguid, terid }, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
         }
     }
 }

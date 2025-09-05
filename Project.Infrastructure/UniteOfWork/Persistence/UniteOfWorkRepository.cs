@@ -8,8 +8,10 @@ namespace Project.Infrastructure.UniteOfWork.Persistence
     internal class UniteOfWorkRepository : IUnitOfWork
     {
         private readonly DapperDbContext _context;
-        IDbConnection? _connection;
+        private IDbConnection? _connection;
         private IDbTransaction? _transaction;
+        public IDbConnection connection => _connection;
+        public IDbTransaction transaction => _transaction;
 
         public UniteOfWorkRepository(DapperDbContext context)
         {
