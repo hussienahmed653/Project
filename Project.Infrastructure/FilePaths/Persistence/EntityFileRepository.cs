@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Project.Application.Common.Interfaces;
 using Project.Domain;
 using Project.Infrastructure.DBContext;
+using System.Data;
 
 namespace Project.Infrastructure.FilePaths.Persistence
 {
@@ -10,10 +12,13 @@ namespace Project.Infrastructure.FilePaths.Persistence
     {
         private readonly string wwwroot = "wwwroot/Uplodes";
         private readonly ApplicationDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public EntityFileRepository(ApplicationDbContext context)
+        public EntityFileRepository(ApplicationDbContext context,
+                                    IUnitOfWork unitOfWork)
         {
             _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public Task DeleteFileAsync(Guid guid)
@@ -42,32 +47,50 @@ namespace Project.Infrastructure.FilePaths.Persistence
                 .Where(f => guids.Contains(f.EntityGuid))
                 .ToListAsync();
         }
-        public Task<string> UploadFileAsync(IFormFile file, FilePath entity)
+        public async Task<string> UploadFileAsync(IFormFile file, Guid guid)
         {
-            var path = Path.Combine(wwwroot, entity.EntityGuid.ToString());
+            var path = Path.Combine(wwwroot, guid.ToString());
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
             var extension = Path.GetExtension(file.FileName);
-            var guid = Guid.NewGuid();
-            var fileName = $"{guid}{extension}";
+            var newguid = Guid.NewGuid();
+            var fileName = $"{newguid}{extension}";
             var fullpath = Path.Combine(path, fileName);
 
             var memorystream = new MemoryStream();
             file.CopyTo(memorystream);
             memorystream.Position = 0;
 
-            entity.Path = fullpath;
-
-            _context.FilePaths.Add(entity);
-            _context.SaveChanges();
+            var pathreturn = await _unitOfWork.connection.QueryFirstOrDefaultAsync<string>("UploadFileAsync", new { @empguid = guid, fullpath }, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
+            if(pathreturn is null)
+                return null;
 
             using var filestream = new FileStream(fullpath, FileMode.Create);
             memorystream.Position = 0;
             memorystream.CopyTo(filestream);
 
 
-            return Task.FromResult(fullpath);
+            return pathreturn;
+
+            /*
+            
+                alter procedure UploadFileAsync @empguid uniqueidentifier, @fullpath nvarchar(max)
+                as
+                    begin
+	                    if exists(select 1 from Employees where EmployeeGuid = @empguid and IsDeleted = 0)
+	                    begin
+		                    insert into FilePaths (EntityGuid, Path)
+		                    values (@empguid, @fullpath);
+		                    select @fullpath
+	                    end
+	                    else
+	                    begin
+		                    return null;
+	                    end
+                    end
+            
+            */
         }
     }
 }

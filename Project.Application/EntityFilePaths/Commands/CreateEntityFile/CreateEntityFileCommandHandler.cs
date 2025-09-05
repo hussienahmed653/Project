@@ -25,13 +25,10 @@ namespace Project.Application.EntityFilePaths.Commands.CreateEntityFile
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if (!await _employeeRepository.ExistAsync(request.Guid))
-                    return Error.NotFound(code: "Guid NotFound", description: "This Guid Is NotFound");
-                var entityfilepath = new FilePath
-                {
-                    EntityGuid = request.Guid
-                };
-                var filepath = await _entityFileRepository.UploadFileAsync(request.File, entityfilepath);
+                var filepath = await _entityFileRepository.UploadFileAsync(request.File, request.Guid);
+                if(filepath is null)
+                    return Error.NotFound("NotFound", "There is no Employee with this guid");
+
                 await _unitOfWork.CommitAsync();
                 return filepath;
             }

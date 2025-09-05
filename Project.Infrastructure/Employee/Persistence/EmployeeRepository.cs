@@ -22,13 +22,146 @@ namespace Project.Infrastructure.Employee.Persistence
         public async Task<int> AddEmployeeAsync(AddEmployeeDto employee)
         {
             return await _unitOfWork.connection.QueryFirstOrDefaultAsync<int>("InsertEmployee", employee, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
-
+            /*
+            
+                alter procedure InsertEmployee
+				@EmployeeID int,
+				@EmployeeGuid uniqueidentifier,
+				@LastName nvarchar(20),
+				@FirstName nvarchar(10),
+				@Title nvarchar(30) = null,
+				@TitleOfCourtesy nvarchar(25) = null,
+				@BirthDate datetime2 = null,
+				@HireDate datetime2 = null,
+				@Address nvarchar(60) = null,
+				@City nvarchar(15) = null,
+				@Region nvarchar(15) = null,
+				@PostalCode nvarchar(10) = null,
+				@Country nvarchar(15) = null,
+				@HomePhone nvarchar(24) = null,
+				@Extension nvarchar(4) = null,
+				@Notes nvarchar(max) = null,
+				@ReportsTo int = null
+			as
+			Begin
+				set @EmployeeID = (SELECT isnull(MAX(EmployeeID),0) + 1 FROM Employees)
+				if(@ReportsTo is not null)
+				begin
+					if exists(select 1 from Employees where EmployeeID = @ReportsTo and IsDeleted = 0)
+						begin
+							insert into Employees 
+							(
+								EmployeeID,
+								EmployeeGuid,
+								LastName,
+								FirstName,
+								Title,
+								TitleOfCourtesy,
+								BirthDate,
+								HireDate,
+								Address,
+								City,
+								Region,
+								PostalCode,
+								Country,
+								HomePhone,
+								Extension,
+								Notes,
+								ReportsTo
+							) 
+							values 
+							(
+								@EmployeeID,
+								@EmployeeGuid,
+								@LastName,
+								@FirstName,
+								@Title,
+								@TitleOfCourtesy,
+								@BirthDate,
+								@HireDate,
+								@Address,
+								@City,
+								@Region,
+								@PostalCode,
+								@Country,
+								@HomePhone,
+								@Extension,
+								@Notes,
+								@ReportsTo
+							)
+							select @EmployeeID
+						end
+					else
+					begin
+						select -1
+					end
+				end
+				else if(@ReportsTo is null)
+				begin
+					insert into Employees 
+					(
+						EmployeeID,
+						EmployeeGuid,
+						LastName,
+						FirstName,
+						Title,
+						TitleOfCourtesy,
+						BirthDate,
+						HireDate,
+						Address,
+						City,
+						Region,
+						PostalCode,
+						Country,
+						HomePhone,
+						Extension,
+						Notes,
+						ReportsTo
+					) 
+					values 
+					(
+						@EmployeeID,
+						@EmployeeGuid,
+						@LastName,
+						@FirstName,
+						@Title,
+						@TitleOfCourtesy,
+						@BirthDate,
+						@HireDate,
+						@Address,
+						@City,
+						@Region,
+						@PostalCode,
+						@Country,
+						@HomePhone,
+						@Extension,
+						@Notes,
+						@ReportsTo
+					)
+					select @EmployeeID
+				end
+			end
+            
+            */
         }
 
 
         public async Task<int> DeleteEmployeeAsync(Guid guid)
         {
             return await _unitOfWork.connection.QuerySingleOrDefaultAsync<int>("DeleteEmployee", new { guid }, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
+            /*
+				alter procedure DeleteEmployee @guid uniqueidentifier
+				as
+				begin
+					if exists(select 1 from Employees where EmployeeGuid = @guid and IsDeleted = 0)
+					begin
+						UPDATE Employees SET IsDeleted = 1 , DeletedOn = (select GETDATE()) WHERE  EmployeeGuid = @guid
+						select 1
+					end
+					else
+						select 0
+				end 
+			*/
         }
 
         public async Task<bool> ExistAsync(Guid guid)
