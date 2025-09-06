@@ -21,8 +21,6 @@ namespace Project.Application.EntityFilePaths.Commands.DeleteEntityFile
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                //if (!await _entityFileRepository.FileIsExistAsync(request.Guid))
-                //    return Error.NotFound(code: "FileNotFound", description: "The file with the specified GUID does not exist.");
                 var deleted = await _entityFileRepository.DeleteFileAsync(request.Guid);
                 if(deleted is 0)
                     return Error.NotFound(code: "FileNotFound", description: "The file with the specified GUID does not exist.");

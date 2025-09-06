@@ -56,7 +56,7 @@ namespace Project.Application.Authentication.Command.ChangePassword
                     return Error.Conflict(description: ".لا يمكنك استخدام احدي كلمات المرور السابقة");
 
                 user.PasswordHash = newpasword.Value;
-                await _userRepository.Update(user);
+                //await _userRepository.Update(user);
                 await _unitOfWork.CommitAsync();
                 return Result.Updated;
             }

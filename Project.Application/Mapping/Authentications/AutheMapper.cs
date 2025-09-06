@@ -14,6 +14,7 @@ namespace Project.Application.Mapping.Authentications
                 FirstName = register.FirstName,
                 LastName = register.LastName,
                 Email = register.Email,
+                CreatedOn = DateTime.UtcNow,
             };
         }
 

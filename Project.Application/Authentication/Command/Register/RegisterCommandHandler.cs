@@ -30,8 +30,10 @@ namespace Project.Application.Authentication.Command.Register
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if (await _userRepository.ExistByEmail(request.Register.Email))
-                    return Error.Conflict(description: "User already exists");
+                /*
+                    0 This Email is already exists
+                    1 Create User
+                */
 
                 var password = _passwordHasher.HashPassword(request.Register.Password);
 
@@ -42,7 +44,9 @@ namespace Project.Application.Authentication.Command.Register
                 var mapptouser = request.Register.MapToUser();
                 mapptouser.PasswordHash = password.Value;
 
-                await _userRepository.Add(mapptouser);
+                var added = await _userRepository.Add(mapptouser);
+                if(!added)
+                    return Error.Conflict(description: "This Email Is already exists");
                 //Mapping User to AuthResult
 
                 var mapptoauthresult = mapptouser.MapToAuthResult();
