@@ -4,7 +4,7 @@ using Project.Application.Common.MediatorInterfaces;
 
 namespace Project.Application.EntityFilePaths.Commands.DeleteEntityFile
 {
-    public class DeleteEntityFileCommandHandler : IRequestHandlerRepository<DeleteEntityFileCommand, ErrorOr<bool>>
+    public class DeleteEntityFileCommandHandler : IRequestHandlerRepository<DeleteEntityFileCommand, ErrorOr<Deleted>>
     {
         private readonly IEntityFileRepository _entityFileRepository;
         private readonly IUnitOfWork _unitOfWork;
@@ -16,16 +16,18 @@ namespace Project.Application.EntityFilePaths.Commands.DeleteEntityFile
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ErrorOr<bool>> Handle(DeleteEntityFileCommand request)
+        public async Task<ErrorOr<Deleted>> Handle(DeleteEntityFileCommand request)
         {
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if (!await _entityFileRepository.FileIsExistAsync(request.Guid))
+                //if (!await _entityFileRepository.FileIsExistAsync(request.Guid))
+                //    return Error.NotFound(code: "FileNotFound", description: "The file with the specified GUID does not exist.");
+                var deleted = await _entityFileRepository.DeleteFileAsync(request.Guid);
+                if(deleted is 0)
                     return Error.NotFound(code: "FileNotFound", description: "The file with the specified GUID does not exist.");
-                await _entityFileRepository.DeleteFileAsync(request.Guid);
                 await _unitOfWork.CommitAsync();
-                return true;
+                return Result.Deleted;
             }
             catch (Exception ex)
             {

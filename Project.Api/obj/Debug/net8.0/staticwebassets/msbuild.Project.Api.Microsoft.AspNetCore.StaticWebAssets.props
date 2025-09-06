@@ -36,5 +36,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\4744a444-0587-424c-acd0-bc9dc1addc57\5824776b-adf6-4ab0-945f-3dbdfe251fe4.cs'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\942662eb-ce9d-42f8-abf3-df3a78f190d7\82f7f589-90f3-402d-b44a-fd0cb9fdd68c.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Project.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Project.Api</BasePath>
+      <RelativePath>Uplodes/942662eb-ce9d-42f8-abf3-df3a78f190d7/82f7f589-90f3-402d-b44a-fd0cb9fdd68c.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>x6bpxonpoq</Fingerprint>
+      <Integrity>FyqiCOfk54SrjrbQoxKkEE1F+ibn5HpQ0vr640uZJig=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Uplodes\942662eb-ce9d-42f8-abf3-df3a78f190d7\82f7f589-90f3-402d-b44a-fd0cb9fdd68c.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

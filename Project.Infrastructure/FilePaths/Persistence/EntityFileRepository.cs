@@ -21,17 +21,22 @@ namespace Project.Infrastructure.FilePaths.Persistence
             _unitOfWork = unitOfWork;
         }
 
-        public Task DeleteFileAsync(Guid guid)
+        public async Task<int> DeleteFileAsync(Guid guid)
         {
-            var path = _context.FilePaths.FirstOrDefault(p => p.EntityGuid == guid);
-            if (File.Exists(path.Path))
-            {
-                File.Delete(path.Path);
-                _context.FilePaths.Remove(path);
-                _context.SaveChanges();
-                return Task.CompletedTask;
-            }
-            throw new FileNotFoundException("This path is not Exist");
+            //var path = _context.FilePaths.FirstOrDefault(p => p.EntityGuid == guid);
+            var deleted = await _unitOfWork.connection.QueryFirstOrDefaultAsync<int>("DeleteFile", new { guid }, _unitOfWork.transaction, commandType: CommandType.StoredProcedure);
+            if(deleted is 0)
+                return 0;
+            //if (File.Exists(path.Path))
+            //{
+            //    File.Delete(path.Path);
+            //    _context.FilePaths.Remove(path);
+            //    _context.SaveChanges();
+            //    return Task.CompletedTask;
+            //}
+            Directory.Delete(Path.Combine(wwwroot,guid.ToString()), recursive: true);
+            return deleted;
+            //throw new FileNotFoundException("This path is not Exist");
         }
 
         public async Task<bool> FileIsExistAsync(Guid guid)

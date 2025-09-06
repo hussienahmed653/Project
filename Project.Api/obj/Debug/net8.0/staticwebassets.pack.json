@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Uplodes\\4744a444-0587-424c-acd0-bc9dc1addc57\\5824776b-adf6-4ab0-945f-3dbdfe251fe4.cs"
     },
     {
+      "Id": "C:\\Users\\hussi\\Source\\Repos\\Project\\Project.Api\\wwwroot\\Uplodes\\942662eb-ce9d-42f8-abf3-df3a78f190d7\\82f7f589-90f3-402d-b44a-fd0cb9fdd68c.pdf",
+      "PackagePath": "staticwebassets\\Uplodes\\942662eb-ce9d-42f8-abf3-df3a78f190d7\\82f7f589-90f3-402d-b44a-fd0cb9fdd68c.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Project.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
