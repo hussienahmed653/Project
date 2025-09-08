@@ -12,11 +12,13 @@ namespace Project.Infrastructure.UniteOfWork.Persistence
         private IDbTransaction? _transaction;
         public IDbConnection connection => _connection;
         public IDbTransaction transaction => _transaction;
+        
 
         public UniteOfWorkRepository(DapperDbContext context)
         {
             _context = context;
         }
+
 
         public async Task BeginTransactionAsync()
         {

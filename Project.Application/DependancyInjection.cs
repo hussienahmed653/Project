@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Application.Common.Interfaces;
 using Project.Application.Common.MediatorInterfaces;
 using Project.Application.Employee.Commands.CreateEmployee;
 using System.Reflection;
@@ -17,6 +18,7 @@ namespace Project.Application
                 .AsImplementedInterfaces()
                 .WithScopedLifetime();
             });
+            //services.AddScoped<ICurrentUserProvider, CurrentUserProvider>();
             return services;
         }
     }

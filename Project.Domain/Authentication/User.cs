@@ -23,12 +23,12 @@ namespace Project.Domain.Authentication
             return Result.Success;
         }
 
-        public static ErrorOr<Success> CurrentPasswordIsEqualsNewPassword(string currentpassword, string newpassword)
-        {
-            if (currentpassword == newpassword)
-                return Error.Conflict(description: "كلمة المرور الجديدة يجب ان تكون مختلفة عن الحالية");
-            return Result.Success;
-        }
+        //public static ErrorOr<Success> CurrentPasswordIsEqualsNewPassword(string currentpassword, string newpassword)
+        //{
+        //    if (currentpassword == newpassword)
+        //        return Error.Conflict(description: "كلمة المرور الجديدة يجب ان تكون مختلفة عن الحالية");
+        //    return Result.Success;
+        //}
 
         public static bool CanUseThisPassword(string newpassword, List<string> oldpasswordhasher)
         {

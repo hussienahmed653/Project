@@ -21,10 +21,6 @@ namespace Project.Application.Authentication.Command.UpdateUserRole
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                //if (!await _userRepository.ExistByEmail(request.email))
-                //    return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
-                //var user = await _userRepository.GetUserByEmail(request.email);
-                //user.Role = request.Roles;
                 var updated = await _userRepository.Update(request.email, (int)request.Roles);
                 if(!updated)
                     return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");

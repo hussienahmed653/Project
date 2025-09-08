@@ -1,5 +1,5 @@
 ﻿using Project.Application.Authentication.Common;
-using Project.Application.Authentication.Dtos;
+using Project.Application.DTOs;
 using Project.Domain.Authentication;
 
 namespace Project.Application.Mapping.Authentications

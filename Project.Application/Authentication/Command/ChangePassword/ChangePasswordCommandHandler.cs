@@ -1,5 +1,4 @@
 ﻿using ErrorOr;
-using Project.Application.Authentication.Dtos;
 using Project.Application.Common.Interfaces;
 using Project.Application.Common.MediatorInterfaces;
 using Project.Domain.Authentication;
@@ -13,16 +12,19 @@ namespace Project.Application.Authentication.Command.ChangePassword
         private readonly IUserRepository _userRepository;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IUserPasswordHistorieRepository _passwordHistorieRepository;
+        ICurrentUserProvider _currentUserProvider;
 
         public ChangePasswordCommandHandler(IUnitOfWork unitOfWork,
                                             IUserRepository userRepository,
                                             IPasswordHasher passwordHasher,
-                                            IUserPasswordHistorieRepository passwordHistorieRepository)
+                                            IUserPasswordHistorieRepository passwordHistorieRepository,
+                                            ICurrentUserProvider currentUserProvider)
         {
             _unitOfWork = unitOfWork;
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
             _passwordHistorieRepository = passwordHistorieRepository;
+            _currentUserProvider = currentUserProvider;
         }
 
         public async Task<ErrorOr<Updated>> Handle(ChangePasswordCommand request)
@@ -30,27 +32,29 @@ namespace Project.Application.Authentication.Command.ChangePassword
             try
             {
                 await _unitOfWork.BeginTransactionAsync();
-                if(!await _userRepository.ExistByEmail(request.ChangePasswordRequest.Email))
-                    return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
+                var currentuser = _currentUserProvider.GetCurrentUser();
 
-                var user = await _userRepository.GetUserByEmail(request.ChangePasswordRequest.Email);
+                var user = await _userRepository.GetUserByEmail(currentuser.email);
 
-                if(!_passwordHasher.IsCorrectPassword(request.ChangePasswordRequest.CurrentPassword, user.PasswordHash))
-                    return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
+                //var differentpasswords = User.CurrentPasswordIsEqualsNewPassword(request.ChangePasswordRequest.CurrentPassword, request.ChangePasswordRequest.NewPassword);
 
-                var differentpasswords = User.CurrentPasswordIsEqualsNewPassword(request.ChangePasswordRequest.CurrentPassword, request.ChangePasswordRequest.NewPassword);
+                //if(differentpasswords.IsError)
+                //    return differentpasswords.Errors;
 
-                if(differentpasswords.IsError)
-                    return differentpasswords.Errors;
+                if (_passwordHasher.IsCorrectPassword(request.ChangePasswordRequest.NewPassword, user.PasswordHash))
+                    return Error.Conflict(description: ".كلمة المرور الجديدة لا يمكن ان تكون نفس كلمة المرور الحالية");
 
                 var passwordmatch = User.PasswordNoMatched(request.ChangePasswordRequest.NewPassword, request.ChangePasswordRequest.ConfirmNewPassword);
+                
                 if (passwordmatch.IsError)
                     return passwordmatch.Errors;
+
                 var newpasword = _passwordHasher.HashPassword(request.ChangePasswordRequest.NewPassword);
+                
                 if(newpasword.IsError)
                     return newpasword.Errors;
 
-                var oldhashers = await _passwordHistorieRepository.ExistByPasswordHash(user.Id);
+                var oldhashers = await _passwordHistorieRepository.ExistByPasswordHash(user.Id); //
 
                 if(!User.CanUseThisPassword(request.ChangePasswordRequest.NewPassword, oldhashers))
                     return Error.Conflict(description: ".لا يمكنك استخدام احدي كلمات المرور السابقة");

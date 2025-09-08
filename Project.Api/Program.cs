@@ -1,7 +1,6 @@
-using BCrypt.Net;
+using Project.Api;
 using Project.Application;
 using Project.Infrastructure;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerWithAuth();
 builder.Services
     .AddApplicationServices()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddApiServices();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

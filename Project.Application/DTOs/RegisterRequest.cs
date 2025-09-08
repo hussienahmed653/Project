@@ -1,4 +1,4 @@
-﻿namespace Project.Application.Authentication.Dtos
+﻿namespace Project.Application.DTOs
 {
     public class RegisterRequest
     {

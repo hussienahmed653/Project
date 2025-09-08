@@ -34,6 +34,7 @@ namespace Project.Application.Authentication.Queries
                     return Error.Conflict(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
 
                 var user = await _userRepository.GetUserByEmail(request.LoginRequest.Email);
+
                 if (!_passwordHasher.IsCorrectPassword(request.LoginRequest.password, user.PasswordHash))
                     return Error.Unauthorized(description: ".بيانات تسجيل دخولك لا تتناسب مع اي حساب في سجلاتنا");
 

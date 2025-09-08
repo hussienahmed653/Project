@@ -690,14 +690,6 @@
       "ChangePasswordRequest": {
         "type": "object",
         "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "currentPassword": {
-            "type": "string",
-            "nullable": true
-          },
           "newPassword": {
             "type": "string",
             "nullable": true

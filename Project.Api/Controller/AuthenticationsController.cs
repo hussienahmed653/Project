@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Project.Application.Authentication.Command.ChangePassword;
 using Project.Application.Authentication.Command.Register;
 using Project.Application.Authentication.Command.UpdateUserRole;
-using Project.Application.Authentication.Dtos;
 using Project.Application.Authentication.Queries;
 using Project.Application.Common.MediatorInterfaces;
+using Project.Application.DTOs;
 using Project.Domain.Authentication;
 
 namespace Project.Api.Controller
@@ -39,6 +39,7 @@ namespace Project.Api.Controller
             var result = await _mediator.Send(new UpdateUserRoleCommand(email, roles));
             return ProblemOr(result);
         }
+        [Authorize]
         [HttpPost("ChangePassword")]
         public async Task<IActionResult> ChangePassword(ChangePasswordRequest changePasswordRequest)
         {

@@ -1,6 +1,6 @@
 ﻿using ErrorOr;
-using Project.Application.Authentication.Dtos;
 using Project.Application.Common.MediatorInterfaces;
+using Project.Application.DTOs;
 
 namespace Project.Application.Authentication.Command.ChangePassword
 {
